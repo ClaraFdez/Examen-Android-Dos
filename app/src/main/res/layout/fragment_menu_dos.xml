@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragments.MenuDosFragment"
+    android:orientation="vertical"
+    android:background="@color/colorPrimary"
+    android:padding="@dimen/padding">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <ImageButton
+            android:id="@+id/bttMenuDosSalir"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:background="@color/colorPrimary"
+            android:onClick="salir"
+            android:src="@android:drawable/ic_menu_close_clear_cancel" />
+
+        <ImageView
+            android:id="@+id/imageView10"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@id/bttMenuDosSalir"
+            android:layout_toLeftOf="@id/bttMenuDosCasa"
+            android:src="@drawable/logo" />
+
+        <ImageButton
+            android:id="@+id/bttMenuDosCasa"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:background="@color/colorPrimary"
+            android:onClick="casa"
+            android:src="@drawable/ic_baseline_home_24" />
+
+    </RelativeLayout>
+
+</FrameLayout>

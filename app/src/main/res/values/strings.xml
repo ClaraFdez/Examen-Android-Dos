@@ -6,7 +6,7 @@
     <string name="login_hint_pass">Introduzca su contraseña</string>
     <string name="login_boton_registrarse">Registrarse</string>
     <string name="login_boton_entrar">Entrar</string>
-    <string name="todo_buscar">Buscar destino</string>
+    <string name="todo_buscar">Introduzca un destino</string>
     <string name="todo_puntuacion">Puntuación</string>
     <string name="registro_nombre">Nombre</string>
     <string name="registro_ape1">Primer apellido</string>
@@ -34,6 +34,8 @@
     <string name="reserva_reservar">Reservar</string>
     <string name="reserva_datoscliente">DATOS PERSONALES</string>
     <string name="reserva_datoshabitacion">DATOS DE LA RESERVA</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>
