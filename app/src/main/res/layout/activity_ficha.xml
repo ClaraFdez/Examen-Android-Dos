@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".Ficha.FichaVista"
     android:weightSum="100"
-    android:background= "#253383"
+    android:background= "@color/colorPrimary"
     android:orientation="vertical">
 
     <LinearLayout

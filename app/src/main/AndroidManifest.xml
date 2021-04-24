@@ -12,20 +12,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".ListarHabitaciones.ListarHabVista"></activity>
-        <activity android:name=".Registro.RegistroVista" />
-        <activity android:name=".Reserva.ReservaVista" />
-        <activity android:name=".ListarTodo.ListarTodoVista" />
-        <activity android:name=".ListarFiltro.ListarFiltroVista" />
-        <activity android:name=".ListarCiudad.ListarCiudadVista" />
-        <activity android:name=".Ficha.FichaVista" />
-        <activity android:name=".Login.MainActivity">
+        <activity android:name=".Inicio.InicioActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ListarHabitaciones.ListarHabVista" />
+        <activity android:name=".Registro.RegistroVista" />
+        <activity android:name=".Reserva.ReservaVista" />
+        <activity android:name=".ListarTodo.ListarTodoVista" />
+        <activity android:name=".ListarFiltro.ListarFiltroVista" />
+        <activity android:name=".ListarCiudad.ListarCiudadVista" />
+        <activity android:name=".Ficha.FichaVista" />
+        <activity android:name=".Login.MainActivity"/>
+
+
     </application>
 
 </manifest>
