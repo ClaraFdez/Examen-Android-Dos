@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="valoresSpinner">
+        <item>Puntuacion</item>
+        <item>Precio ascendente</item>
+        <item>Precio descendente</item>
+        <item>Mas reservados</item>
+    </string-array>
+</resources>

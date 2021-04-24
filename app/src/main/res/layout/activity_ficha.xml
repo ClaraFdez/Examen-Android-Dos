@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Ficha.FichaVista"
+    android:weightSum="100"
+    android:background= "#253383"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10"
+        android:orientation="horizontal"
+        android:weightSum="10">
+
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="8"
+            app:srcCompat="@drawable/logo"
+            android:layout_marginTop="10sp"/>
+
+        <Button
+            android:id="@+id/imageButton2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5sp"
+            android:layout_marginTop="5sp"
+            android:layout_marginRight="5sp"
+            android:layout_weight="2"
+            android:background="@drawable/volver"
+            android:onClick="volver" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="69"
+        android:orientation="vertical"
+        android:weightSum="20">
+
+
+        <ImageView
+            android:id="@+id/imagenFicha"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="7"
+            app:srcCompat="@drawable/fotohotelinicio" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/txtFichaNom"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="2"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textStyle="italic" />
+
+        <TextView
+            android:id="@+id/txtFichaDir"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="2"
+            android:textColor="@color/white"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/txtFichaDes"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="6"
+            android:textColor="@color/white"
+            android:textSize="15dp"
+            android:hint="aqui debe venir la descripcion"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:weightSum="6"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:text="@string/todo_puntuacion"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:textAlignment="center"/>
+
+            <TextView
+                android:id="@+id/txtFichaPuntuacion"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textAlignment="center"/>
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:text="@string/ficha_estrellas"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:textAlignment="center"/>
+
+            <TextView
+                android:id="@+id/txtFichaEstrellas"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textAlignment="center"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txtbuscarhabitacion"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:text="@string/ficha_buscar_habitacion"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="16"
+        android:orientation="horizontal"
+        android:weightSum="16">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:weightSum="3"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text="@string/ficha_fecha_entrada"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:textSize="10sp"
+                android:layout_marginTop="5sp"/>
+
+            <TextView
+                android:id="@+id/textView15"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text="@string/ficha_fecha_salida"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:textSize="10sp"
+                android:layout_marginTop="5sp"/>
+
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text="@string/ficha_num_personas"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:textSize="10sp"
+                android:layout_marginTop="5sp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:weightSum="3"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/edtFechaInicio"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="date"
+                android:hint="entrada (dd-mm-yyyy)"
+                android:textSize="17sp"
+                android:background="@color/white"
+                android:textColor="@color/black"
+                android:layout_marginTop="5sp"/>
+
+            <EditText
+                android:id="@+id/edtFechaFin"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="date"
+                android:hint="salida (dd-mm-yyyy)"
+                android:textSize="17sp"
+                android:background="@color/white"
+                android:textColor="@color/black"
+                android:layout_marginTop="5sp"
+                />
+
+            <EditText
+                android:id="@+id/edtNumPersonas"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="date"
+                android:textSize="17sp"
+                android:background="@color/white"
+                android:textColor="@color/black"
+                android:layout_marginTop="5sp"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:orientation="vertical"
+            android:weightSum="3">
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+            <Button
+                android:id="@+id/bttFechas"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="#FBF08E"
+                android:text="@string/ficha_buscar"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_marginLeft="15sp"
+                android:onClick="buscarHabitacion"/>
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+</LinearLayout>

@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name"></string>
+    <string name="login_usuario">Usuario</string>
+    <string name="login_hint_usuario">Introduzca su email</string>
+    <string name="login_pass">Contraseña</string>
+    <string name="login_hint_pass">Introduzca su contraseña</string>
+    <string name="login_boton_registrarse">Registrarse</string>
+    <string name="login_boton_entrar">Entrar</string>
+    <string name="todo_buscar">Buscar destino</string>
+    <string name="todo_puntuacion">Puntuación</string>
+    <string name="registro_nombre">Nombre</string>
+    <string name="registro_ape1">Primer apellido</string>
+    <string name="registro_ape2">Segundo apelido</string>
+    <string name="registro_dni">DNI</string>
+    <string name="registro_telefono">Número de teléfono</string>
+    <string name="registro_email">e-mail (usuario)</string>
+    <string name="registro_pass">Contraseña</string>
+    <string name="registro_btt_aceptar">Registrarse</string>
+    <string name="ficha_recycler_npersonas">Número de personas</string>
+    <string name="ficha_recycler_camas_ind">Camas indivicuales</string>
+    <string name="ficha_recycler_camas_matr">Camas de matrimonio</string>
+    <string name="ciudad_filtrar">Filtrar por: </string>
+    <string name="ciudad_filtrar_puntuacion">Puntuacion </string>
+    <string name="ciudad_filtrar_precio_asc">Precio ascendente</string>
+    <string name="ciudad_filtrar_precio_des">Precio descendente </string>
+    <string name="ciudad_filtrar_reservados">Mas reservados </string>
+    <string name="ficha_estrellas">Estrellas </string>
+    <string name="ficha_fecha_entrada">Fecha entrada:</string>
+    <string name="ficha_fecha_salida">Fecha salida:</string>
+    <string name="ficha_buscar_habitacion">Buscar habitaciones:  </string>
+    <string name="ficha_num_personas">Personas:</string>
+    <string name="ficha_buscar">Buscar</string>
+    <string name="ficha_hab_precio">Precio</string>
+    <string name="reserva_reservar">Reservar</string>
+    <string name="reserva_datoscliente">DATOS PERSONALES</string>
+    <string name="reserva_datoshabitacion">DATOS DE LA RESERVA</string>
+
+
+</resources>

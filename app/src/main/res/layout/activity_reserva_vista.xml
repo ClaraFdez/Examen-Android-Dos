@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Reserva.ReservaVista"
+    android:background="#253383"
+    android:orientation="vertical"
+    android:weightSum="100">
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10"
+        app:srcCompat="@drawable/logo" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="30"
+        android:orientation="vertical"
+        android:weightSum="10">
+
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textAlignment="center"
+            android:text="@string/reserva_datoscliente" />
+
+        <TextView
+            android:id="@+id/textView19"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_marginLeft="10sp"
+            android:text="@string/registro_nombre" />
+
+        <TextView
+            android:id="@+id/txtReservaNombre"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="20sp" />
+
+        <TextView
+            android:id="@+id/textView17"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_marginLeft="10sp"
+            android:text="@string/registro_telefono" />
+
+        <TextView
+            android:id="@+id/txtReservaTelefono"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="20sp" />
+
+        <TextView
+            android:id="@+id/textView20"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_marginLeft="10sp"
+            android:text="@string/registro_email" />
+
+        <TextView
+            android:id="@+id/txtReservaEmail"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="20sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="50"
+        android:orientation="vertical"
+        android:weightSum="15">
+        <TextView
+            android:id="@+id/textView111"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textAlignment="center"
+            android:text="@string/reserva_datoshabitacion" />
+
+        <TextView
+            android:id="@+id/textView191"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_marginLeft="10sp"
+            android:text="@string/registro_nombre" />
+
+        <TextView
+            android:id="@+id/txtReservaNombreHotel"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="20sp" />
+
+        <TextView
+            android:id="@+id/textView171"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_marginLeft="10sp"
+            android:text="@string/ficha_recycler_camas_ind" />
+
+        <TextView
+            android:id="@+id/txtReservaCamasIndi"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="20sp" />
+
+        <TextView
+            android:id="@+id/textView201"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_marginLeft="10sp"
+            android:text="@string/ficha_recycler_camas_matr" />
+
+        <TextView
+            android:id="@+id/txtReservaCamasMatri"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="20sp" />
+
+        <TextView
+            android:id="@+id/textView2011"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_marginLeft="10sp"
+            android:text="@string/ficha_fecha_entrada" />
+
+        <TextView
+            android:id="@+id/txtReservaFechaEntrada"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="20sp" />
+
+        <TextView
+            android:id="@+id/textView2013"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_marginLeft="10sp"
+            android:text="@string/ficha_fecha_salida" />
+
+        <TextView
+            android:id="@+id/txtReservaFechaSalida"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="20sp" />
+
+        <TextView
+            android:id="@+id/textView2014"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_marginLeft="10sp"
+            android:text="@string/ficha_hab_precio" />
+
+        <TextView
+            android:id="@+id/txtReservaPrecio"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="20sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10"
+        android:orientation="horizontal"
+        android:weightSum="4">
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"/>
+        <Button
+            android:id="@+id/bttRegistrarReserva"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/reserva_reservar"
+            android:background="#EAD419"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_marginTop="15sp"
+            android:layout_marginRight="5sp"
+            android:onClick="registrarReserva"/>
+    </LinearLayout>
+
+</LinearLayout>

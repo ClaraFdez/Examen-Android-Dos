@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Registro.RegistroVista"
+    android:background="#253383"
+    android:orientation="vertical"
+    android:weightSum="100">
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10"
+        app:srcCompat="@drawable/logo" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5"
+        android:text="@string/registro_nombre"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="13sp"
+        android:layout_marginTop="15sp"
+        android:layout_marginLeft="10sp"
+        />
+
+    <EditText
+        android:id="@+id/edtRegistroNombre"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:background="@color/white"
+        android:layout_marginLeft="10sp"
+        android:layout_marginTop="3sp"
+        android:layout_marginRight="10sp"
+        android:textSize="13sp"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5"
+        android:text="@string/registro_ape1"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="13sp"
+        android:layout_marginTop="15sp"
+        android:layout_marginLeft="10sp"/>
+
+    <EditText
+        android:id="@+id/edtRegistroApe1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:background="@color/white"
+        android:layout_marginLeft="10sp"
+        android:layout_marginTop="3sp"
+        android:layout_marginRight="10sp"
+        android:textSize="13sp"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5"
+        android:text="@string/registro_ape2"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="13sp"
+        android:layout_marginTop="15sp"
+        android:layout_marginLeft="10sp"/>
+
+    <EditText
+        android:id="@+id/edtRegistroApe2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:background="@color/white"
+        android:layout_marginLeft="10sp"
+        android:layout_marginTop="3sp"
+        android:layout_marginRight="10sp"
+        android:textSize="13sp"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5"
+        android:text="@string/registro_dni"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="13sp"
+        android:layout_marginTop="15sp"
+        android:layout_marginLeft="10sp"/>
+
+    <EditText
+        android:id="@+id/edtRegistroDNI"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:background="@color/white"
+        android:layout_marginLeft="10sp"
+        android:layout_marginTop="3sp"
+        android:layout_marginRight="10sp"
+        android:textSize="13sp"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5"
+        android:text="@string/registro_telefono"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="13sp"
+        android:layout_marginTop="15sp"
+        android:layout_marginLeft="10sp"/>
+
+    <EditText
+        android:id="@+id/edtRegistroTelefono"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:background="@color/white"
+        android:layout_marginLeft="10sp"
+        android:layout_marginTop="3sp"
+        android:layout_marginRight="10sp"
+        android:textSize="13sp"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5"
+        android:text="@string/registro_email"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="13sp"
+        android:layout_marginTop="15sp"
+        android:layout_marginLeft="10sp"/>
+
+    <EditText
+        android:id="@+id/edtRegistroEmail"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:background="@color/white"
+        android:layout_marginLeft="10sp"
+        android:layout_marginTop="3sp"
+        android:layout_marginRight="10sp"
+        android:textSize="13sp"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5"
+        android:text="@string/registro_pass"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="13sp"
+        android:layout_marginTop="15sp"
+        android:layout_marginLeft="10sp"/>
+
+    <EditText
+        android:id="@+id/edtRegistroPass"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:background="@color/white"
+        android:layout_marginLeft="10sp"
+        android:layout_marginTop="3sp"
+        android:layout_marginRight="10sp"
+        android:textSize="13sp"
+        android:textColor="@color/black" />
+<!--
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10"/>
+-->
+    <Button
+        android:id="@+id/bttRegistroAceptar"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_gravity="right"
+        android:layout_weight="13"
+        android:onClick="registrarse"
+        android:text="@string/registro_btt_aceptar"
+        android:textColor="@color/black"
+
+        android:textSize="13sp"
+        android:textStyle="bold" />
+
+
+</LinearLayout>
