@@ -10,40 +10,23 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import com.svalero.clara.bookingexamen.ListarTodo.ListarTodoVista;
 import com.svalero.clara.bookingexamen.R;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link MenuDosFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class MenuDosFragment extends Fragment {
 
-    private Button bttMenuDosSalir;
-    private Button bttMenuDosCasa;
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private ImageButton bttMenuDosSalir;
+    private ImageButton bttMenuDosCasa;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
 
     public MenuDosFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment MenuDosFragment.
-     */
+/*
     // TODO: Rename and change types and number of parameters
     public static MenuDosFragment newInstance(String param1, String param2) {
         MenuDosFragment fragment = new MenuDosFragment();
@@ -62,17 +45,36 @@ public class MenuDosFragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
-
+*/
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
+        View view = inflater.inflate(R.layout.fragment_menu_dos, container, false);
+
+        bttMenuDosCasa = (ImageButton) view.findViewById(R.id.bttMenuDosCasa);
+        bttMenuDosSalir = (ImageButton) view.findViewById(R.id.bttMenuDosSalir);
+
+        bttMenuDosSalir.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                System.exit(0);
+            }
+        });
+
+        bttMenuDosCasa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(view.getContext(), ListarTodoVista.class);
+                startActivity(intent);
+            }
+        });
 
 
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_menu_dos, container, false);
+        return view;
     }
-
+/*
     public void salir(View view){
         System.exit(0);
 
@@ -82,6 +84,9 @@ public class MenuDosFragment extends Fragment {
         Intent intent = new Intent(getActivity(), ListarTodoVista.class);
         startActivity(intent);
     }
-
+*/
+    public void pasarCasa(){
+        Intent intent = new Intent(getContext(), ListarTodoVista.class);
+    }
 
 }

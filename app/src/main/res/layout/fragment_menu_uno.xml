@@ -21,7 +21,6 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
             android:background="@color/colorPrimary"
-            android:onClick="salir"
             android:src="@android:drawable/ic_menu_close_clear_cancel" />
 
         <ImageView

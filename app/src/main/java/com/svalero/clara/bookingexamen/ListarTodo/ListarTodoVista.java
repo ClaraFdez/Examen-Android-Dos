@@ -15,7 +15,7 @@ import com.svalero.clara.bookingexamen.Ficha.FichaVista;
 import com.svalero.clara.bookingexamen.ListarCiudad.ListarCiudadVista;
 import com.svalero.clara.bookingexamen.R;
 import java.util.ArrayList;
-import java.util.List;
+
 
 public class ListarTodoVista extends AppCompatActivity implements ListarTodoContrato.View{
 
@@ -44,8 +44,6 @@ public class ListarTodoVista extends AppCompatActivity implements ListarTodoCont
         layoutListarTodo.setVisibility(View.GONE);
         layoutError.setVisibility(View.GONE);
 
-
-System.out.println("1.Antes de getHoteles");//------------------------------------------------------------------
         listarTodoPresenter = new ListarTodoPresenter(this);
         listarTodoPresenter.getHoteles(this);
 
@@ -102,7 +100,6 @@ System.out.println("1.Antes de getHoteles");//----------------------------------
         layoutCargando.setVisibility(View.GONE);
         layoutListarTodo.setVisibility(View.GONE);
         layoutError.setVisibility(View.VISIBLE);
-
-        mensaje = "Error en la obtención de los datos";
     }
+
 }

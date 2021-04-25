@@ -2,13 +2,14 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ParentListarCiudad"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ListarCiudad.ListarCiudadVista"
     android:background="#253383"
     android:weightSum="100"
     android:orientation="vertical">
-
+<!--
     <ImageView
         android:id="@+id/imageView6"
         android:layout_width="wrap_content"
@@ -17,8 +18,17 @@
         app:srcCompat="@drawable/logo"
         tools:layout_editor_absoluteX="139dp"
         tools:layout_editor_absoluteY="8dp" />
+-->
+    <fragment
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/fragCiudad"
+        android:name="com.svalero.clara.bookingexamen.Fragments.MenuDosFragment">
+
+    </fragment>
 
     <TextView
+        android:id="@+id/txt_ciudad_filtrar"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="5"
@@ -27,10 +37,12 @@
         android:textStyle="bold"/>
 
     <LinearLayout
+        android:id="@+id/layout_ciudad_botones1"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="5"
+        android:layout_weight="10"
         android:weightSum="2"
+        android:padding="@dimen/padding"
         android:orientation="horizontal"
         >
 
@@ -38,39 +50,39 @@
             android:id="@+id/bttPuntuacion"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_marginLeft="5sp"
-            android:layout_marginTop="5sp"
             android:layout_marginRight="5sp"
             android:layout_weight="1"
-            android:background="#EAD419"
+            android:background="@color/accent"
             android:onClick="puntuacion"
             android:text="@string/ciudad_filtrar_puntuacion"
             android:textAlignment="center"
             android:textColor="@color/black"
-            android:textSize="10sp" />
+            android:textSize="10sp"
+            android:clickable="true"/>
 
         <Button
             android:id="@+id/bttReservados"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="#EAD419"
+            android:background="#FFC107"
             android:onClick="masReservados"
             android:text="@string/ciudad_filtrar_reservados"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:layout_marginLeft="5sp"
-            android:layout_marginRight="5sp"
             android:textSize="10sp"
-            android:layout_marginTop="5sp"/>
+            android:clickable="true"/>
     </LinearLayout>
 
 
     <LinearLayout
+        android:id="@+id/layout_ciudad_botones2"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="5"
+        android:layout_weight="10"
         android:weightSum="2"
+        android:padding="@dimen/padding"
         android:orientation="horizontal">
 
         <Button
@@ -78,39 +90,94 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="#EAD419"
+            android:background="#FFC107"
             android:onClick="precioAsc"
             android:text="@string/ciudad_filtrar_precio_asc"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="10sp"
-            android:layout_marginLeft="5sp"
             android:layout_marginRight="5sp"
-            android:layout_marginTop="5sp"/>
+            android:clickable="true"/>
 
         <Button
             android:id="@+id/bttPrecioDes"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="#EAD419"
+            android:background="#FFC107"
             android:onClick="precioDes"
             android:text="@string/ciudad_filtrar_precio_des"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="10sp"
             android:layout_marginLeft="5sp"
-            android:layout_marginRight="5sp"
-            android:layout_marginTop="5sp"/>
+            android:clickable="true"/>
 
     </LinearLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/reciclerCiudad"
+    <RelativeLayout
+        android:id="@+id/layout_ciudad_contenedor"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="75"
-        android:layout_marginTop="10sp"/>
+        android:layout_marginTop="@dimen/padding">
+<!--
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/reciclerCiudad"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible"
+            />
+            -->
+    </RelativeLayout>
 
+
+    <!-- Progress Bar -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/layout_listar_ciudad_progressBar"
+        android:visibility="gone">
+
+        <ProgressBar
+            android:id="@+id/frag_listar_ciudad_progressBar"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerInParent="true"
+            />
+
+    </RelativeLayout>
+
+    <!-- Pantalla de Error -->
+
+    <RelativeLayout
+        android:id="@+id/layoutErrorCiudad"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        >
+        <TextView
+            android:id="@+id/txt_listar_ciudad_error"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/todo_error"
+            android:textColor="@color/white"
+            android:layout_centerHorizontal="true"
+            android:layout_centerInParent="true"/>
+
+        <Button
+            android:id="@+id/bttReintentarCiudad"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_listar_todo_error"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:clickable="true"
+            android:onClick="botonReintentarciudad"
+            android:text="@string/todo_boton_reintentar" />
+
+    </RelativeLayout>
 
 </LinearLayout>

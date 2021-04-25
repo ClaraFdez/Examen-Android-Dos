@@ -31,7 +31,6 @@ public class ApiCliente {
 
     public Call<ArrayList<Hotel>> getHoteles(String param){
         BookingApiInterfaz bookingApiInterfaz = retrofit.create(BookingApiInterfaz.class);
-        //String param ="HOTEL.FIND_ALL";
         return bookingApiInterfaz.getHotel(param);
     }
 
