@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/parentListartodo"
     tools:context=".ListarTodo.ListarTodoVista"
     android:background="@color/colorPrimary"
     android:orientation="vertical"
@@ -14,17 +15,127 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:id="@+id/fragTodoLogo"
-        android:name="com.svalero.clara.bookingexamen.Fragments.MenuUnoFragment">
+        android:name="com.svalero.clara.bookingexamen.Fragments.MenuUnoFragment"
+        >
 
     </fragment>
 
-    <fragment
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/fragTodoRecicler"
-        android:name="com.svalero.clara.bookingexamen.Fragments.ListarTodoFragment">
+        android:layout_height="match_parent"
+        android:id="@+id/layoutListarTodo"
+        android:weightSum="100"
+        android:orientation="vertical"
+        android:padding="@dimen/padding">
 
-    </fragment>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="15"
+            android:orientation="horizontal"
+            android:weightSum="8"
+            android:background="@color/white"
+            >
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="7"
+                android:id="@+id/til_ciudad"
+                app:endIconMode="clear_text"
+                android:hint="@string/todo_buscar"
+                app:hintTextColor="@color/text"
+                android:layout_marginTop="4dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/edtTodoDestino"
+                    android:textSize="13dp"
+                    android:background="@color/white"
+
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <ImageButton
+                android:id="@+id/imgBttBuscar"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:background="@color/accent"
+                android:onClick="buscarDestino"
+                app:srcCompat="@android:drawable/ic_menu_search" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="90"
+            android:orientation="vertical"
+            android:padding="@dimen/padding">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerTodo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/til_ciudad"
+                />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Progress Bar -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/layout_listar_todo_progressBar">
+
+        <ProgressBar
+            android:id="@+id/frag_listar_todo_progressBar"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerInParent="true"
+            />
+
+    </RelativeLayout>
+
+    <!-- Pantalla de Error -->
+
+    <RelativeLayout
+        android:id="@+id/layoutError"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        >
+        <TextView
+            android:id="@+id/txt_listar_todo_error"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/todo_error"
+            android:textColor="@color/white"
+            android:layout_centerHorizontal="true"
+            android:layout_centerInParent="true"/>
+
+        <Button
+            android:id="@+id/bttReintentar"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_listar_todo_error"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:clickable="true"
+            android:onClick="botonReintentar"
+            android:text="@string/todo_boton_reintentar" />
+
+    </RelativeLayout>
 
 
 

@@ -22,8 +22,10 @@ public class ListarTodoPresenter implements ListarTodoContrato.Presenter{
 
     @Override
     public void getHoteles(Context context) {
+    //public void getHoteles(){
 
         this.model.getListarTodoWS(context, new ListarTodoContrato.Model.OnListarTodoListener() {
+            //this.model.getListarTodoWS(new ListarTodoContrato.Model.OnListarTodoListener() {
             @Override
             public void resolve(ArrayList<Hotel> listaHoteles) {
                 System.out.println(("presenter: dentro del resolve"+listaHoteles));//---------------------------------

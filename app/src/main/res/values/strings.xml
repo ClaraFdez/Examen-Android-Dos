@@ -8,6 +8,8 @@
     <string name="login_boton_entrar">Entrar</string>
     <string name="todo_buscar">Introduzca un destino</string>
     <string name="todo_puntuacion">Puntuación</string>
+    <string name="todo_error">Fallo en la conexion</string>
+    <string name="todo_boton_reintentar">Reintentar</string>
     <string name="registro_nombre">Nombre</string>
     <string name="registro_ape1">Primer apellido</string>
     <string name="registro_ape2">Segundo apelido</string>

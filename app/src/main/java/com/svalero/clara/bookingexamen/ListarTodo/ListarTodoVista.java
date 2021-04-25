@@ -1,6 +1,7 @@
 package com.svalero.clara.bookingexamen.ListarTodo;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
@@ -24,14 +25,26 @@ public class ListarTodoVista extends AppCompatActivity implements ListarTodoCont
     private ListarTodoPresenter listarTodoPresenter;
     private RecyclerView recyclerView;
 
+    private View layoutError;
+    private View layoutCargando;
+    private View layoutListarTodo;
+
     private RecyclerView.LayoutManager layoutManager;
+    private FragmentManager fragmentManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listar_todo_vista);
 
+        fragmentManager = getSupportFragmentManager();
         inicializar();
+
+        layoutCargando.setVisibility(View.VISIBLE);
+        layoutListarTodo.setVisibility(View.GONE);
+        layoutError.setVisibility(View.GONE);
+
+
 System.out.println("1.Antes de getHoteles");//------------------------------------------------------------------
         listarTodoPresenter = new ListarTodoPresenter(this);
         listarTodoPresenter.getHoteles(this);
@@ -51,13 +64,25 @@ System.out.println("1.Antes de getHoteles");//----------------------------------
         startActivity(intent);
     }
 
+    public void botonReintentar(View view){
+        layoutCargando.setVisibility(View.VISIBLE);
+        listarTodoPresenter.getHoteles(this);
+    }
+
     public void inicializar(){
         edtTodoDestino = findViewById(R.id.edtTodoDestino);
+        layoutCargando = findViewById(R.id.layout_listar_todo_progressBar);
+        layoutError = findViewById(R.id.layoutError);
+        layoutListarTodo = findViewById(R.id.layoutListarTodo);
     }
 
 
     @Override
     public void success(ArrayList<Hotel> listaHoteles) {
+
+        layoutCargando.setVisibility(View.GONE);
+        layoutListarTodo.setVisibility(View.VISIBLE);
+
         ListarTodoAdapter adapter;
         adapter = new ListarTodoAdapter(listaHoteles);
         recyclerView.setAdapter(adapter);
@@ -74,6 +99,10 @@ System.out.println("1.Antes de getHoteles");//----------------------------------
 
     @Override
     public void error(String mensaje) {
+        layoutCargando.setVisibility(View.GONE);
+        layoutListarTodo.setVisibility(View.GONE);
+        layoutError.setVisibility(View.VISIBLE);
+
         mensaje = "Error en la obtención de los datos";
     }
 }
