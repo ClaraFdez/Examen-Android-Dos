@@ -17,6 +17,7 @@ public class Habitacion {
     private int numPersonas;
     private int camasInd;
     private int camasMat;
+    private String nombreHotel;
 
 
     public Habitacion(int precio, String fechaEntrada, String fechaSalida, int idHabitacion, int idHotel, int numPersonas, int camasInd, int camasMat){
@@ -34,7 +35,8 @@ public class Habitacion {
     public Habitacion(){
     }
 
-    public Habitacion(int idHabitacion, int numPersonas, int camasInd, int camasMat, int precio){
+    public Habitacion(String nombreHotel, int idHabitacion, int numPersonas, int camasInd, int camasMat, int precio){
+        this.nombreHotel = nombreHotel;//-----------------------
         this.idHabitacion = idHabitacion;
         this.numPersonas = numPersonas;
         this.camasInd = camasInd;
@@ -59,8 +61,10 @@ public class Habitacion {
     public void setCamasInd(int camasInd) { this.camasInd = camasInd; }
     public int getCamasMat() { return camasMat; }
     public void setCamasMat(int camasMat) { this.camasMat = camasMat; }
+    public String getNombreHotel() {return nombreHotel; }
+    public void setNombreHotel(String nombreHotel) {this.nombreHotel = nombreHotel;}
 
-
+    /*
     public static ArrayList<Habitacion> getArrayListFromJSon(JSONArray datos){
         ArrayList<Habitacion> lista = null;
         Habitacion habitacion = null;
@@ -85,6 +89,6 @@ public class Habitacion {
         }
 
         return lista;
-    }
+    }*/
 
 }

@@ -22,11 +22,11 @@ public class FichaVista extends AppCompatActivity implements FichaContrato.View{
     private TextView txtFichaDir;
     private TextView txtFichaDes;
     private ImageView imagen;
-    private EditText edtFechaInicio;
-    private EditText edtFechaFin;
+    //private EditText edtFechaInicio;
+    //private EditText edtFechaFin;
     private TextView txtPuntuacion;
     private TextView txtEstrellas;
-    private EditText numPersonas;
+    //private EditText numPersonas;
 
     private FichaPresenter fichaPresenter;
     public String nombreHotelPasado;
@@ -53,7 +53,7 @@ public class FichaVista extends AppCompatActivity implements FichaContrato.View{
         Intent intent = new Intent(getApplicationContext(), ListarTodoVista.class);
         startActivity(intent);
     }
-
+/*
     public void buscarHabitacion(View v){
         Intent intent = new Intent(getApplicationContext(), ListarHabVista.class);
         intent.putExtra("fechaentrada", edtFechaInicio.getText().toString());
@@ -62,17 +62,26 @@ public class FichaVista extends AppCompatActivity implements FichaContrato.View{
         intent.putExtra("nombreHotelPasado", nombreHotelPasado);
         startActivity(intent);
     }
+*/
+    //pasamos el nombre del hotel para luego unirlo a los datos de fecha y ver las habitaciones disponibles
+    public void buscarDisponibilidad(View view){
+        Intent intent = new Intent(getApplicationContext(), ListarHabVista.class);
+        intent.putExtra("nombreHotelPasado", nombreHotelPasado);
+        startActivity(intent);
+
+    }
+
 
     public void inicializar(){
         txtFichaNom = findViewById(R.id.txtFichaNom);
         txtFichaDir = findViewById(R.id.txtFichaDir);
         txtFichaDes = findViewById(R.id.txtFichaDes);
         imagen = findViewById(R.id.imagenFicha);
-        edtFechaInicio = findViewById(R.id.edtFechaInicio);
-        edtFechaFin = findViewById(R.id.edtFechaFin);
+        //edtFechaInicio = findViewById(R.id.edtFechaInicio);
+        //edtFechaFin = findViewById(R.id.edtFechaFin);
         txtPuntuacion = findViewById(R.id.txtFichaPuntuacion);
         txtEstrellas = findViewById(R.id.txtFichaEstrellas);
-        numPersonas = findViewById(R.id.edtNumPersonas);
+        //numPersonas = findViewById(R.id.edtNumPersonas);
     }
 
 

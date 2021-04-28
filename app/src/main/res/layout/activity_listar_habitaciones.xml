@@ -9,6 +9,158 @@
     android:orientation="vertical"
     android:background="#253383">
 
+    <fragment
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/fragHabitacion"
+        android:name="com.svalero.clara.bookingexamen.Fragments.MenuDosFragment">>
+
+    </fragment>
+
+    <TextView
+        android:id="@+id/txtbuscarhabitacion"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:text="@string/ficha_buscar_habitacion"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="16"
+        android:orientation="horizontal"
+        android:weightSum="16">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:weightSum="3"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text="@string/ficha_fecha_entrada"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:textSize="10sp"
+                android:layout_marginTop="5sp"/>
+
+            <TextView
+                android:id="@+id/textView15"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text="@string/ficha_fecha_salida"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:textSize="10sp"
+                android:layout_marginTop="5sp"/>
+
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text="@string/ficha_num_personas"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:textSize="10sp"
+                android:layout_marginTop="5sp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:weightSum="3"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/edtFechaInicio"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="date"
+                android:hint="entrada (dd-mm-yyyy)"
+                android:textSize="17sp"
+                android:background="@color/white"
+                android:textColor="@color/black"
+                android:layout_marginTop="5sp"/>
+
+            <EditText
+                android:id="@+id/edtFechaFin"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="date"
+                android:hint="salida (dd-mm-yyyy)"
+                android:textSize="17sp"
+                android:background="@color/white"
+                android:textColor="@color/black"
+                android:layout_marginTop="5sp"
+                />
+
+            <EditText
+                android:id="@+id/edtNumPersonas"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="date"
+                android:textSize="17sp"
+                android:background="@color/white"
+                android:textColor="@color/black"
+                android:layout_marginTop="5sp"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:orientation="vertical"
+            android:weightSum="3">
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+            <Button
+                android:id="@+id/bttFechas"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="#FBF08E"
+                android:text="@string/hab_buscar"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_marginLeft="15sp"
+                android:onClick="buscarHabitacion"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="78"
+        android:orientation="vertical"
+        android:id="@+id/layout_contenedor_habitacion">
+
+    </LinearLayout>
+
+
+
+
+    <!--
     <ImageView
         android:id="@+id/imageView7"
         android:layout_width="match_parent"
@@ -21,5 +173,8 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="90"/>
+
+
+-->
 
 </LinearLayout>

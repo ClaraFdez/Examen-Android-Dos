@@ -7,42 +7,52 @@
     tools:context=".Ficha.FichaVista"
     android:weightSum="100"
     android:background= "@color/colorPrimary"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:id="@+id/layout_Ficha">
+
+    <fragment
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/fragFicha"
+        android:name="com.svalero.clara.bookingexamen.Fragments.MenuDosFragment">>
+
+    </fragment>
+    <!--
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="10"
+            android:orientation="horizontal"
+            android:weightSum="10">
+
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="8"
+                app:srcCompat="@drawable/logo"
+                android:layout_marginTop="10sp"/>
+
+            <Button
+                android:id="@+id/imageButton2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5sp"
+                android:layout_marginTop="5sp"
+                android:layout_marginRight="5sp"
+                android:layout_weight="2"
+                android:background="@drawable/volver"
+                android:onClick="volver" />
+
+
+        </LinearLayout>
+        -->
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="10"
-        android:orientation="horizontal"
-        android:weightSum="10">
-
-
-        <ImageView
-            android:id="@+id/imageView4"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="8"
-            app:srcCompat="@drawable/logo"
-            android:layout_marginTop="10sp"/>
-
-        <Button
-            android:id="@+id/imageButton2"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="5sp"
-            android:layout_marginTop="5sp"
-            android:layout_marginRight="5sp"
-            android:layout_weight="2"
-            android:background="@drawable/volver"
-            android:onClick="volver" />
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="69"
+        android:layout_weight="75"
         android:orientation="vertical"
         android:weightSum="20">
 
@@ -138,8 +148,31 @@
                 android:textAlignment="center"/>
         </LinearLayout>
 
+
+
     </LinearLayout>
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="20">
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:id="@+id/bttFichaBuscar"
+            android:textStyle="bold"
+            android:background="@color/accent"
+            android:text="@string/ficha_btt_buscar"
+            android:clickable="true"
+            android:onClick="buscarDisponibilidad"
+
+            />
+    </RelativeLayout>
+<!--
     <TextView
         android:id="@+id/txtbuscarhabitacion"
         android:layout_width="match_parent"
@@ -269,7 +302,7 @@
                 android:onClick="buscarHabitacion"/>
         </LinearLayout>
     </LinearLayout>
-
+-->
 
 
 </LinearLayout>

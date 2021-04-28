@@ -13,9 +13,9 @@ import com.svalero.clara.bookingexamen.Ficha.FichaVista;
 import com.svalero.clara.bookingexamen.R;
 import java.util.ArrayList;
 
-public class ListarFiltroVista extends AppCompatActivity implements ListarFiltroContrato.View{
+public class ListarFiltroVista extends AppCompatActivity /*implements ListarFiltroContrato.View*/{
 
-    private ListarFiltroPresenter listarFiltroPresenter;
+    /*private ListarFiltroPresenter listarFiltroPresenter;
     private RecyclerView recyclerView;
     private RecyclerView.LayoutManager layoutManager;
     private TextView precio;
@@ -68,5 +68,5 @@ public class ListarFiltroVista extends AppCompatActivity implements ListarFiltro
     @Override
     public void error(String mensaje) {
         mensaje = "Error en la obtención de los datos";
-    }
+    }*/
 }

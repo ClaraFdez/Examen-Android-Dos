@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.svalero.clara.bookingexamen.Beans.Reserva;
 import com.svalero.clara.bookingexamen.Beans.Usuario;
 import com.svalero.clara.bookingexamen.ListarTodo.ListarTodoVista;
 import com.svalero.clara.bookingexamen.R;
@@ -22,6 +24,7 @@ public class MainActivity extends AppCompatActivity implements LoginContrato.Vie
 
     public String nombre;
     public String pass;
+    public String IdHabitacion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +32,9 @@ public class MainActivity extends AppCompatActivity implements LoginContrato.Vie
         setContentView(R.layout.activity_main);
 
         inicializar();
+
+        Bundle bundle = getIntent().getExtras();
+        IdHabitacion = bundle.getString("nombreHotelPasado");
 
     }
 
@@ -54,8 +60,9 @@ public class MainActivity extends AppCompatActivity implements LoginContrato.Vie
         obtenerValores();
         loginPresenter = new LoginPresenter(this);
         loginPresenter.getLogin(this, nombre, pass);
-       // Intent i = new Intent(getApplicationContext(),ListarTodoVista.class);
-        //startActivity(i);
+        Intent i = new Intent(getApplicationContext(), Reserva.class);
+        //hay que pasarle los datos del usuario y los que le han llegado desde la fragment de HabitacionFragment
+        startActivity(i);
     }
 
     public void loginRegistrar (View view){

@@ -9,7 +9,7 @@
     android:orientation="vertical"
     android:background="@color/colorPrimary">
 
-
+<!--
     <ImageView
         android:id="@+id/imageView5"
         android:layout_width="match_parent"
@@ -22,6 +22,6 @@
         android:layout_height="0dp"
         android:layout_weight="90"
         android:id="@+id/reciclerFiltro"/>
-
+-->
 
 </LinearLayout>

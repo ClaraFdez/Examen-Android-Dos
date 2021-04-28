@@ -21,6 +21,7 @@
     <string name="ficha_recycler_npersonas">Número de personas</string>
     <string name="ficha_recycler_camas_ind">Camas indivicuales</string>
     <string name="ficha_recycler_camas_matr">Camas de matrimonio</string>
+    <string name="ficha_btt_buscar">Ver disponibilidad</string>
     <string name="ciudad_filtrar">Filtrar por: </string>
     <string name="ciudad_filtrar_puntuacion">Puntuacion </string>
     <string name="ciudad_filtrar_precio_asc">Precio ascendente</string>
@@ -31,8 +32,8 @@
     <string name="ficha_fecha_salida">Fecha salida:</string>
     <string name="ficha_buscar_habitacion">Buscar habitaciones:  </string>
     <string name="ficha_num_personas">Personas:</string>
-    <string name="ficha_buscar">Buscar</string>
     <string name="ficha_hab_precio">Precio</string>
+    <string name="hab_buscar">Buscar</string>
     <string name="reserva_reservar">Reservar</string>
     <string name="reserva_datoscliente">DATOS PERSONALES</string>
     <string name="reserva_datoshabitacion">DATOS DE LA RESERVA</string>
