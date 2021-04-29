@@ -23,6 +23,7 @@ public class ListarHabPresenter implements ListarHabContrato.Presenter{
         this.model.getHabitacionesWS(context, fechaInicio, fechaFin, numPersonas, nombre, new ListarHabContrato.Model.OnListarHabitacionListener() {
             @Override
             public void resolveHab(ArrayList<Habitacion> listaHabitaciones) {
+                System.out.println("en listarhabpresenter, resolvehab, lo que viene de vuelta: "+ listaHabitaciones);//-------------------
                 vista.successHab(listaHabitaciones);
             }
 

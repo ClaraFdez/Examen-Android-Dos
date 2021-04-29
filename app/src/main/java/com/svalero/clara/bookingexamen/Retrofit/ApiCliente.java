@@ -4,6 +4,7 @@ import android.content.Context;
 
 import com.svalero.clara.bookingexamen.Beans.Habitacion;
 import com.svalero.clara.bookingexamen.Beans.Hotel;
+import com.svalero.clara.bookingexamen.Beans.Reserva;
 import com.svalero.clara.bookingexamen.Beans.Usuario;
 
 import java.util.ArrayList;
@@ -62,5 +63,15 @@ public class ApiCliente {
     public Call<ResponseBody> addUsuario(String param){
         BookingApiInterfaz bookingApiInterfaz = retrofit.create(BookingApiInterfaz.class);
         return bookingApiInterfaz.addUsuario(param);
+    }
+
+    public Call<ArrayList<Reserva>> addReserva(String param){
+        BookingApiInterfaz bookingApiInterfaz = retrofit.create(BookingApiInterfaz.class);
+        return bookingApiInterfaz.addReserva(param);
+    }
+
+    public Call<ResponseBody> addSobre(String param){
+        BookingApiInterfaz bookingApiInterfaz = retrofit.create(BookingApiInterfaz.class);
+        return bookingApiInterfaz.addSobre(param);
     }
 }

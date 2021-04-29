@@ -67,6 +67,12 @@ public class HabitacionFragment extends Fragment implements ListarHabContrato.Vi
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), MainActivity.class);
                 intent.putExtra("IdHabitacion", listaHabitaciones.get(recyclerView.getChildAdapterPosition(v)).getIdHabitacion());
+                intent.putExtra("FechaInicio", listaHabitaciones.get(recyclerView.getChildAdapterPosition(v)).getFechaEntrada());
+                intent.putExtra("FechaFin", listaHabitaciones.get(recyclerView.getChildAdapterPosition(v)).getFechaSalida());
+                intent.putExtra("NombreHotel", listaHabitaciones.get(recyclerView.getChildAdapterPosition(v)).getNombreHotel());
+                intent.putExtra("CamasIndi", listaHabitaciones.get(recyclerView.getChildAdapterPosition(v)).getCamasInd());
+                intent.putExtra("CamasMat", listaHabitaciones.get(recyclerView.getChildAdapterPosition(v)).getCamasMat());
+                intent.putExtra("Precio", listaHabitaciones.get(recyclerView.getChildAdapterPosition(v)).getPrecio());
                 startActivity(intent);
             }
 

@@ -12,6 +12,8 @@ import com.svalero.clara.bookingexamen.Beans.Usuario;
 import com.svalero.clara.bookingexamen.ListarTodo.ListarTodoVista;
 import com.svalero.clara.bookingexamen.R;
 import com.svalero.clara.bookingexamen.Registro.RegistroVista;
+import com.svalero.clara.bookingexamen.Reserva.ReservaVista;
+
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements LoginContrato.View{
@@ -24,7 +26,14 @@ public class MainActivity extends AppCompatActivity implements LoginContrato.Vie
 
     public String nombre;
     public String pass;
-    public String IdHabitacion;
+    public String idHabitacion;
+    public String fechaInicio;
+    public String fechaFin;
+    public String nombreHotel;
+    public String camasIndi;
+    public String camasMat;
+    public String precio;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +43,13 @@ public class MainActivity extends AppCompatActivity implements LoginContrato.Vie
         inicializar();
 
         Bundle bundle = getIntent().getExtras();
-        IdHabitacion = bundle.getString("nombreHotelPasado");
+        idHabitacion = bundle.getString("IdHabitacion");
+        fechaInicio = bundle.getString("FechaInicio");
+        fechaFin = bundle.getString("FechaFin");
+        nombreHotel = bundle.getString("NombreHotel");
+        camasIndi = bundle.getString("CamasIndi");
+        camasMat = bundle.getString("CamasMat");
+        precio = bundle.getString("Precio");
 
     }
 
@@ -60,9 +75,9 @@ public class MainActivity extends AppCompatActivity implements LoginContrato.Vie
         obtenerValores();
         loginPresenter = new LoginPresenter(this);
         loginPresenter.getLogin(this, nombre, pass);
-        Intent i = new Intent(getApplicationContext(), Reserva.class);
+        //Intent i = new Intent(getApplicationContext(), Reserva.class);
         //hay que pasarle los datos del usuario y los que le han llegado desde la fragment de HabitacionFragment
-        startActivity(i);
+        //startActivity(i);
     }
 
     public void loginRegistrar (View view){
@@ -91,7 +106,18 @@ public class MainActivity extends AppCompatActivity implements LoginContrato.Vie
                edtLoginPass.setText("");
                edtLoginUsuario.setText("");
             }else{
-                Intent i = new Intent(getApplicationContext(), ListarTodoVista.class);
+                Intent i = new Intent(getApplicationContext(), ReservaVista.class);
+                i.putExtra("IdHabitacion", idHabitacion);
+                i.putExtra("FechaInicio", fechaInicio);
+                i.putExtra("FechaFin", fechaFin);
+                i.putExtra("NombreHotel", nombreHotel);
+                i.putExtra("CamasIndi", camasIndi);
+                i.putExtra("CamasMat", camasMat);
+                i.putExtra("Precio", precio);
+                i.putExtra("Usuario", listaUsuario.get(0).getNombreUsuario());
+                i.putExtra("Mail", listaUsuario.get(0).getEmail());
+                i.putExtra("Telefono", Integer.toString(listaUsuario.get(0).getTelefono()));
+                i.putExtra("IdUsuario", Integer.toString(listaUsuario.get(0).getId()));
                 startActivity(i);
             }
         }

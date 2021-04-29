@@ -2,6 +2,7 @@ package com.svalero.clara.bookingexamen.Retrofit;
 
 import com.svalero.clara.bookingexamen.Beans.Habitacion;
 import com.svalero.clara.bookingexamen.Beans.Hotel;
+import com.svalero.clara.bookingexamen.Beans.Reserva;
 import com.svalero.clara.bookingexamen.Beans.Usuario;
 
 import java.util.ArrayList;
@@ -42,5 +43,13 @@ public interface BookingApiInterfaz {
     // Inserta un usuario
     @POST("Controller")
     Call<ResponseBody> addUsuario(@Query("ACTION") String params);
+
+    //Inserta una reserva y nos la devuelve
+    @POST("Controller")
+    Call<ArrayList<Reserva>> addReserva(@Query("ACTION") String params);
+
+    //Inserta en la tabla Sobre
+    @POST("Controller")
+    Call<ResponseBody> addSobre(@Query("ACTION") String params);
 
 }

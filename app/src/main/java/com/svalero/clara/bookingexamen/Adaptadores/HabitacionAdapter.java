@@ -70,9 +70,13 @@ public class HabitacionAdapter extends RecyclerView.Adapter<HabitacionAdapter.Ha
     @Override
     public void onBindViewHolder(HabitacionViewHolder holder, int position) {
         holder.txtHabRowCamasIndi1.setText(String.valueOf(listaHabitaciones.get(position).getCamasInd()));
+        System.out.println("a ver que le llega dentro del viewholder de habitacionAdapter, camas ind: "+ listaHabitaciones.get(position).getCamasInd());//-------------------------
         holder.txtHabRowCamasMatri1.setText(String.valueOf(listaHabitaciones.get(position).getCamasMat()));
+        System.out.println("a ver que le llega dentro del viewholder de habitacionAdapter, camas mat: "+ listaHabitaciones.get(position).getCamasMat());//--------
         holder.txtHabRowNumPersonas1.setText(String.valueOf(listaHabitaciones.get(position).getNumPersonas()));
+        System.out.println("a ver que le llega dentro del viewholder de habitacionAdapter, num per: "+ listaHabitaciones.get(position).getNumPersonas());//--------
         holder.txtHabRowPrecio.setText(String.valueOf(listaHabitaciones.get(position).getPrecio()));
+        System.out.println("a ver que le llega dentro del viewholder de habitacionAdapter, precio: "+ listaHabitaciones.get(position).getPrecio());//--------
     }
 
     @Override

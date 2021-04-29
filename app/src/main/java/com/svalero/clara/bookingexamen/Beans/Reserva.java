@@ -17,15 +17,14 @@ public class Reserva {
     private int precio;
     private String nombreHotel;
 
-    public Reserva(int idReserva, int idHabitacion, int idUsuario, String fechaInicio, String fechaFin, int numCamas, int precio, String nombreHotel){
+
+    //EL QUE NECESITAMOS PARA INSERTAR UNA RESERVA (TABLA RESERVA Y TABLA SOBRE)
+    public Reserva(int idReserva, int idHabitacion, int idUsuario, String fechaInicio, String fechaFin){
         this.idReserva = idReserva;
         this.idHabitacion = idHabitacion;
         this.idUsuario = idUsuario;
         this.fechaInicio = fechaInicio;
         this.fechaFin = fechaFin;
-        this.numCamas = numCamas;
-        this. precio = precio;
-        this.nombreHotel = nombreHotel;
     }
 
     public Reserva(){
@@ -48,7 +47,7 @@ public class Reserva {
     public int getNumCamas() { return numCamas; }
     public void setNumCamas(int numCamas) { this.numCamas = numCamas; }
 
-
+/*
     public static ArrayList<Reserva> getArrayListFromJSon(JSONArray datos){
         ArrayList<Reserva> listaReserva = null;
         Reserva reserva = null;
@@ -75,5 +74,5 @@ public class Reserva {
 
         return listaReserva;
     }
-
+*/
 }
