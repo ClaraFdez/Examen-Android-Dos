@@ -35,8 +35,8 @@ public class Habitacion {
     public Habitacion(){
     }
 
-    public Habitacion(String nombreHotel, int idHabitacion, int numPersonas, int camasInd, int camasMat, int precio){
-        this.nombreHotel = nombreHotel;//-----------------------
+    public Habitacion(int idHabitacion, int numPersonas, int camasInd, int camasMat, int precio){
+        //this.nombreHotel = nombreHotel;//-----------------------
         this.idHabitacion = idHabitacion;
         this.numPersonas = numPersonas;
         this.camasInd = camasInd;

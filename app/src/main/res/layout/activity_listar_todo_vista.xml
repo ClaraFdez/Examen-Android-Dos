@@ -34,7 +34,8 @@
             android:layout_weight="15"
             android:orientation="horizontal"
             android:weightSum="8"
-            android:background="@color/white"
+            android:background="@color/colorPrimary"
+
             >
 
             <com.google.android.material.textfield.TextInputLayout
@@ -46,7 +47,9 @@
                 android:hint="@string/todo_buscar"
                 app:hintTextColor="@color/text"
                 android:layout_marginTop="4dp"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:boxBackgroundColor="@color/white"
+                android:textColorHint="@color/white"
+
                 >
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -54,23 +57,28 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/edtTodoDestino"
                     android:textSize="13dp"
-                    android:background="@color/white"
+
 
                     />
 
             </com.google.android.material.textfield.TextInputLayout>
 
 
-            <ImageButton
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/imgBttBuscar"
-                style="@style/Widget.MaterialComponents.Button.TextButton"
+                app:fabSize="mini"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:background="@color/accent"
+                android:layout_marginRight="10dp"
+                android:backgroundTint="@color/accent"
                 android:onClick="buscarDestino"
-                app:srcCompat="@android:drawable/ic_menu_search" />
+                android:layout_marginTop="10dp"
+                android:src="@android:drawable/ic_menu_search"
+                android:tint="@color/text"
+
+                 />
+
 
         </LinearLayout>
         <LinearLayout

@@ -42,9 +42,13 @@ public class HabitacionFragment extends Fragment implements ListarHabContrato.Vi
         View view = inflater.inflate(R.layout.fragment_habitacion, container, false);
 
         String nombreHotel = getArguments().getString("nombreHotelPasado");
+            System.out.println("habitacion fragment, nombreHotel: "+ nombreHotel);//------------------------------
         String fechaInicio = getArguments().getString("fechaInicio");
+            System.out.println("habitacion fragmenta, fechaInicio: "+ fechaInicio);//------------------------------
         String fechaFin = getArguments().getString("fechaFin");
+            System.out.println("habitacion fragment, fechaFin: "+ fechaFin);//------------------------------
         String numPersonas = getArguments().getString("numPersonas");
+            System.out.println("habitacion fragment, numPersonas: "+ numPersonas);//------------------------------
 
         recyclerView = (RecyclerView) view.findViewById(R.id.reciclerHabitacion);
         recyclerView.setHasFixedSize(true);
@@ -61,13 +65,16 @@ public class HabitacionFragment extends Fragment implements ListarHabContrato.Vi
     public void successHab(ArrayList<Habitacion> listaHabitaciones) {
         System.out.println("dentro del success de habitacion fragment");//---------------------------------------
         HabitacionAdapter adapter = new HabitacionAdapter(listaHabitaciones);
+        System.out.println("a ver si se ve algo, es listahabitacines en success de habfragment: "+listaHabitaciones);//-----------------------
         recyclerView.setAdapter(adapter);
         adapter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                //CUIDADO, AQUÍ HAY ALGO QUE PUEDE FALLAR
                 Intent intent = new Intent(getContext(), MainActivity.class);
                 intent.putExtra("IdHabitacion", listaHabitaciones.get(recyclerView.getChildAdapterPosition(v)).getIdHabitacion());
-                intent.putExtra("FechaInicio", listaHabitaciones.get(recyclerView.getChildAdapterPosition(v)).getFechaEntrada());
+                intent.putExtra("FechaInicio", /*fechaInicio); */listaHabitaciones.get(recyclerView.getChildAdapterPosition(v)).getFechaEntrada());
                 intent.putExtra("FechaFin", listaHabitaciones.get(recyclerView.getChildAdapterPosition(v)).getFechaSalida());
                 intent.putExtra("NombreHotel", listaHabitaciones.get(recyclerView.getChildAdapterPosition(v)).getNombreHotel());
                 intent.putExtra("CamasIndi", listaHabitaciones.get(recyclerView.getChildAdapterPosition(v)).getCamasInd());

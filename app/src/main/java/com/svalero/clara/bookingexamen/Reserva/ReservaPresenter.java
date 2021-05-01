@@ -18,7 +18,7 @@ public class ReservaPresenter implements ReservaContrato.Presenter{
     }
 
     @Override
-    public void setReserva(Context context, int idUsuario, String fechaInicio, String fechaFin, int idHabitacion) {
+    public void setReserva(Context context, String idUsuario, String fechaInicio, String fechaFin, String idHabitacion) {
         this.model.setReservaWS(context, idUsuario, fechaInicio, fechaFin, idHabitacion, new ReservaContrato.Model.OnReservaListener() {
             @Override
             public void resolveReserva(String success) {
@@ -31,4 +31,6 @@ public class ReservaPresenter implements ReservaContrato.Presenter{
             }
         });
     }
+
+
 }

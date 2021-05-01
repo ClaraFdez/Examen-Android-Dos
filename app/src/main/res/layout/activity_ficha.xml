@@ -164,6 +164,8 @@
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
             android:id="@+id/bttFichaBuscar"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:textColor="@color/white"
             android:textStyle="bold"
             android:background="@color/accent"
             android:text="@string/ficha_btt_buscar"

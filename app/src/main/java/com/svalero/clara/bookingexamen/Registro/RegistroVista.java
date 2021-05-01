@@ -16,15 +16,23 @@ public class RegistroVista extends AppCompatActivity implements RegistroContrato
 
     private EditText edtRegistroNombre;
     private EditText edtRegistroApe1;
-    private EditText edtRegistroApe2;
+    //private EditText edtRegistroApe2;
     private EditText edtRegistrodni;
     private EditText edtRegistroTelefono;
     private EditText edtRegistroEmail;
     private EditText edtRegistroPass;
-    private Button bttRegistroAceptar;
+    //private Button bttRegistroAceptar;
 
     String nombre, ape1, ape2, dni, email, pass;
     int tlf;
+
+    public String idHabitacion;
+    public String fechaInicio;
+    public String fechaFin;
+    public String nombreHotel;
+    public String camasIndi;
+    public String camasMat;
+    public String precio;
 
     Usuario usuario;
     RegistroPresenter registroPresenter;
@@ -36,12 +44,20 @@ public class RegistroVista extends AppCompatActivity implements RegistroContrato
 
         inicializar();
 
+        Bundle bundle = getIntent().getExtras();
+        idHabitacion = Integer.toString(bundle.getInt("IdHabitacion"));
+        fechaInicio = bundle.getString("FechaInicio");
+        fechaFin = bundle.getString("FechaFin");
+        camasIndi = Integer.toString(bundle.getInt("CamasIndi"));
+        nombreHotel = bundle.getString("NombreHotel");
+        camasMat = Integer.toString(bundle.getInt("CamasMat"));
+        precio = Integer.toString(bundle.getInt("Precio"));
+
     }
 
     public void inicializar(){
         edtRegistroNombre = findViewById(R.id.edtRegistroNombre);
         edtRegistroApe1 = findViewById(R.id.edtRegistroApe1);
-        edtRegistroApe2 = findViewById(R.id.edtRegistroApe2);
         edtRegistrodni = findViewById(R.id.edtRegistroDNI);
         edtRegistroTelefono = findViewById(R.id.edtRegistroTelefono);
         edtRegistroEmail = findViewById(R.id.edtRegistroEmail);
@@ -53,7 +69,6 @@ public class RegistroVista extends AppCompatActivity implements RegistroContrato
         usuario = new Usuario();
         usuario.setNombreUsuario(nombre);
         usuario.setApe1(ape1);
-        usuario.setApe2(ape2);
         usuario.setDni(dni);
         usuario.setEmail(email);
         usuario.setPass(pass);
@@ -66,7 +81,6 @@ public class RegistroVista extends AppCompatActivity implements RegistroContrato
     public void obtenerDatos(){
         nombre = edtRegistroNombre.getText().toString();
         ape1 = edtRegistroApe1.getText().toString();
-        ape2 = edtRegistroApe2.getText().toString();
         dni = edtRegistrodni.getText().toString();
         tlf = Integer.parseInt(edtRegistroTelefono.getText().toString());
         email = edtRegistroEmail.getText().toString();
@@ -78,6 +92,13 @@ public class RegistroVista extends AppCompatActivity implements RegistroContrato
     public void successRegistro(String success) {
         registrado(success);
         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        intent.putExtra("IdHabitacion", idHabitacion);
+        intent.putExtra("FechaInicio", fechaInicio);
+        intent.putExtra("FechaFin", fechaFin);
+        intent.putExtra("NombreHotel", nombreHotel);
+        intent.putExtra("CamasIndi", camasIndi);
+        intent.putExtra("CamasMat", camasMat);
+        intent.putExtra("Precio", precio);
         startActivity(intent);
     }
 

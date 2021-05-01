@@ -43,13 +43,13 @@ public class MainActivity extends AppCompatActivity implements LoginContrato.Vie
         inicializar();
 
         Bundle bundle = getIntent().getExtras();
-        idHabitacion = bundle.getString("IdHabitacion");
+        idHabitacion = Integer.toString(bundle.getInt("IdHabitacion"));
         fechaInicio = bundle.getString("FechaInicio");
         fechaFin = bundle.getString("FechaFin");
+        camasIndi = Integer.toString(bundle.getInt("CamasIndi"));
         nombreHotel = bundle.getString("NombreHotel");
-        camasIndi = bundle.getString("CamasIndi");
-        camasMat = bundle.getString("CamasMat");
-        precio = bundle.getString("Precio");
+        camasMat = Integer.toString(bundle.getInt("CamasMat"));
+        precio = Integer.toString(bundle.getInt("Precio"));
 
     }
 
@@ -82,6 +82,14 @@ public class MainActivity extends AppCompatActivity implements LoginContrato.Vie
 
     public void loginRegistrar (View view){
         Intent i = new Intent(getApplicationContext(), RegistroVista.class);
+        i.putExtra("IdHabitacion", idHabitacion);
+        i.putExtra("FechaInicio", fechaInicio);
+        i.putExtra("FechaFin", fechaFin);
+        i.putExtra("NombreHotel", nombreHotel);
+        i.putExtra("CamasIndi", camasIndi);
+        i.putExtra("CamasMat", camasMat);
+        i.putExtra("Precio", precio);
+
         startActivity(i);
         /*Intent i = new Intent(getApplicationContext(),ListarTodoVista.class);
         startActivity(i);*/

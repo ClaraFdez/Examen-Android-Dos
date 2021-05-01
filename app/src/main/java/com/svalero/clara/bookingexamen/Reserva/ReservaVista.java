@@ -38,16 +38,27 @@ public class ReservaVista extends AppCompatActivity implements ReservaContrato.V
 
         Bundle bundle = getIntent().getExtras();
         idHabitacion = bundle.getString("IdHabitacion");
+            System.out.println("reserva vista, idhabitacion: "+ idHabitacion);//------------------------------
         fechaInicio = bundle.getString("FechaInicio");
+            System.out.println("reserva vista, fechaInicio: "+ fechaInicio);//------------------------------
         fechaFin = bundle.getString("FechaFin");
+             System.out.println("reserva vista, fechaFin: "+ fechaFin);//------------------------------
         idUsuario = bundle.getString("IdUsuario");
+            System.out.println("reserva vista, idUsuario: "+ idUsuario);//------------------------------
         nombreHotel = bundle.getString("NombreHotel");
+            System.out.println("reserva vista, nombreHotel: "+ nombreHotel);//------------------------------
         camasIndi = bundle.getString("CamasIndi");
+            System.out.println("reserva vista, camasIndi: "+ camasIndi);//------------------------------
         camasMat = bundle.getString("CamasMat");
+            System.out.println("reserva vista, camasMat: "+ camasMat);//------------------------------
         precio = bundle.getString("Precio");
+            System.out.println("reserva vista, precio: "+ precio);//------------------------------
         nombreUsurio = bundle.getString("Usuario");
+            System.out.println("reserva vista, nombreUsurio: "+ nombreUsurio);//------------------------------
         eMail = bundle.getString("Mail");
+            System.out.println("reserva vista, eMail: "+ eMail);//------------------------------
         telefono = bundle.getString("Telefono");
+            System.out.println("reserva vista, telefono: "+ telefono);//----------------------------
 
         darValores();
 
@@ -78,7 +89,7 @@ public class ReservaVista extends AppCompatActivity implements ReservaContrato.V
     }
 
     public void registrarReserva(View view){
-       ReservaPresenter reservaPresenter = new ReservaPresenter();
+       ReservaPresenter reservaPresenter = new ReservaPresenter(this);
        reservaPresenter.setReserva(this, idUsuario, fechaInicio, fechaFin, idHabitacion);
     }
 

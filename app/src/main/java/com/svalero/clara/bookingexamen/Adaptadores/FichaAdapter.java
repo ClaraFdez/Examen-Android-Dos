@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.svalero.clara.bookingexamen.Beans.Habitacion;
 import com.svalero.clara.bookingexamen.R;
 import java.util.ArrayList;
-
+/*
 public class FichaAdapter extends RecyclerView.Adapter<FichaAdapter.HabitacionViewHolder> implements View.OnClickListener{
 
     private ArrayList<Habitacion> listaHabitaciones;
@@ -29,9 +29,9 @@ public class FichaAdapter extends RecyclerView.Adapter<FichaAdapter.HabitacionVi
 
         public HabitacionViewHolder(View v){
             super(v);
-            numPersonas = (TextView) v.findViewById(R.id.txtHabRowNumPersonas1);
-            camasIndividuales = (TextView) v.findViewById(R.id.txtHabRowCamasIndi1);
-            camasMatrimonio = (TextView) v.findViewById(R.id.txtHabRowCamasMatri1);
+            numPersonas = (TextView) v.findViewById(R.id.txtHabRowNumPersonas);
+            camasIndividuales = (TextView) v.findViewById(R.id.txtHabRowCamasIndi);
+            camasMatrimonio = (TextView) v.findViewById(R.id.txtHabRowCamasMatri);
             precio = (TextView) v.findViewById(R.id.txtHabRowPrecio);
             id_habitacion = (TextView) v.findViewById((R.id.txtIdHabitacion));
         }
@@ -68,6 +68,7 @@ public class FichaAdapter extends RecyclerView.Adapter<FichaAdapter.HabitacionVi
     @Override
     public void onBindViewHolder(FichaAdapter.HabitacionViewHolder holder, int position) {
         holder.numPersonas.setText(listaHabitaciones.get(position).getNumPersonas());
+        System.out.println("numero personas en la fichaAdapter: "+listaHabitaciones.get(position).getNumPersonas());//------------------
         holder.camasIndividuales.setText(listaHabitaciones.get(position).getCamasInd());
         holder.camasMatrimonio.setText(listaHabitaciones.get(position).getCamasMat());
         holder.precio.setText(listaHabitaciones.get(position).getPrecio());
@@ -81,3 +82,4 @@ public class FichaAdapter extends RecyclerView.Adapter<FichaAdapter.HabitacionVi
     }
 
 }
+*/

@@ -50,6 +50,7 @@ public class ListarHabVista extends AppCompatActivity /*implements ListarHabCont
 
         Bundle bundle = getIntent().getExtras();
         nombreHotel = bundle.getString("nombreHotelPasado");
+            System.out.println("listarhabvista budle, nombreHotel: "+ nombreHotel);//------------------------------
 
         inicializar();
 
@@ -86,9 +87,13 @@ public class ListarHabVista extends AppCompatActivity /*implements ListarHabCont
     public void buscarHabitacion(View view){
         Bundle argumentos = new Bundle();
         argumentos.putString("nombreHotelPasado", nombreHotel);
+            System.out.println("listarhabvista, nombreHotel: "+ nombreHotel);//------------------------------
         argumentos.putString("fechaInicio", fechaInicio.getText().toString());
+            System.out.println("listarhabvista, fechaInicio: "+ fechaInicio.getText().toString());//------------------------------
         argumentos.putString("fechaFin", fechaFin.getText().toString());
+            System.out.println("listarhabvista, fechaFin: "+ fechaFin.getText().toString());//------------------------------
         argumentos.putString("numPersonas", numPersonas.getText().toString());
+            System.out.println("listarhabvista, numPersonas: "+ numPersonas.getText().toString());//------------------------------
 
         HabitacionFragment habitacionFragment = new HabitacionFragment();
         habitacionFragment.setArguments(argumentos);

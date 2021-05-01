@@ -5,9 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Registro.RegistroVista"
-    android:background="#253383"
+    android:background="@color/colorPrimary"
     android:orientation="vertical"
-    android:weightSum="100">
+    android:weightSum="100"
+    android:padding="15dp">
 
     <ImageView
         android:id="@+id/imageView3"
@@ -16,6 +17,161 @@
         android:layout_weight="10"
         app:srcCompat="@drawable/logo" />
 
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="90"
+        android:background="@color/white"
+        android:padding="@dimen/padding"
+        >
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_registro_nombre"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:hint="@string/registro_nombre"
+            app:endIconMode="clear_text"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="3dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtRegistroNombre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="10dp"
+                android:textAlignment="center"
+                android:textColor="@color/text"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_registro_ape1"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:hint="@string/registro_ape1"
+            app:endIconMode="clear_text"
+            android:layout_marginTop="3dp"
+            android:layout_below="@id/til_registro_nombre">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtRegistroApe1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="10dp"
+                android:textAlignment="center"
+                android:textColor="@color/text"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_registro_dni"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:hint="@string/registro_dni"
+            app:endIconMode="clear_text"
+            android:layout_marginTop="3dp"
+            android:layout_below="@id/til_registro_ape1">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtRegistroDNI"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="10dp"
+                android:textAlignment="center"
+                android:textColor="@color/text"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_registro_tlf"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:hint="@string/registro_telefono"
+            app:endIconMode="clear_text"
+            android:layout_marginTop="3dp"
+            android:layout_below="@id/til_registro_dni">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtRegistroTelefono"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:textSize="10dp"
+                android:textAlignment="center"
+                android:textColor="@color/text"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_registro_email"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:hint="@string/registro_email"
+            app:endIconMode="clear_text"
+            android:layout_marginTop="3dp"
+            android:layout_below="@id/til_registro_tlf">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtRegistroEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="10dp"
+                android:textAlignment="center"
+                android:inputType="textEmailAddress"
+                android:textColor="@color/text"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_registro_pass"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:hint="@string/registro_pass"
+            app:endIconMode="clear_text"
+            android:layout_marginTop="3dp"
+            android:layout_below="@id/til_registro_email">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtRegistroPass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="10dp"
+                android:textAlignment="center"
+                android:textColor="@color/text"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+        <Button
+            android:id="@+id/bttRegistroAceptar"
+            style="?attr/materialButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:onClick="registrarse"
+            android:text="@string/registro_btt_aceptar"
+            android:textSize="10dp"
+            android:textStyle="bold"
+            android:background="@color/colorPrimary"/>
+
+    </RelativeLayout>
+
+<!--
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
@@ -198,12 +354,12 @@
         android:layout_marginRight="10sp"
         android:textSize="13sp"
         android:textColor="@color/black" />
-<!--
+
     <Space
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="10"/>
--->
+
     <Button
         android:id="@+id/bttRegistroAceptar"
         android:layout_width="wrap_content"
@@ -217,5 +373,5 @@
         android:textSize="13sp"
         android:textStyle="bold" />
 
-
+-->
 </LinearLayout>

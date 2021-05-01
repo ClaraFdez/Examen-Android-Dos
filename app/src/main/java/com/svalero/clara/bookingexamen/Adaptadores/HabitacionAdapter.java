@@ -27,6 +27,7 @@ public class HabitacionAdapter extends RecyclerView.Adapter<HabitacionAdapter.Ha
         private TextView txtHabRowCamasIndi1;
         private TextView txtHabRowCamasMatri1;
         private TextView txtHabRowPrecio;
+        private TextView txtIdHabitacion;//--------------------------
 
 
 
@@ -37,6 +38,7 @@ public class HabitacionAdapter extends RecyclerView.Adapter<HabitacionAdapter.Ha
             txtHabRowCamasMatri1 = (TextView) v.findViewById(R.id.txtHabRowCamasMatri1);
             txtHabRowNumPersonas1 = (TextView) v.findViewById(R.id.txtHabRowNumPersonas1);
             txtHabRowPrecio = (TextView) v.findViewById(R.id.txtHabRowPrecio);
+            txtIdHabitacion =(TextView) v.findViewById(R.id.txtIdHabitacion);//---------------------------
 
         }
 
@@ -77,6 +79,9 @@ public class HabitacionAdapter extends RecyclerView.Adapter<HabitacionAdapter.Ha
         System.out.println("a ver que le llega dentro del viewholder de habitacionAdapter, num per: "+ listaHabitaciones.get(position).getNumPersonas());//--------
         holder.txtHabRowPrecio.setText(String.valueOf(listaHabitaciones.get(position).getPrecio()));
         System.out.println("a ver que le llega dentro del viewholder de habitacionAdapter, precio: "+ listaHabitaciones.get(position).getPrecio());//--------
+        holder.txtIdHabitacion.setText(String.valueOf(listaHabitaciones.get(position).getIdHabitacion()));
+        System.out.println("a ver que le llega dentro del viewholder de habitacionAdapter, id habitacion: "+ listaHabitaciones.get(position).getIdHabitacion());//--------
+
     }
 
     @Override

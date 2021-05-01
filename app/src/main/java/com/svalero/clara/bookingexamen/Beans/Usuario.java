@@ -16,18 +16,18 @@ public class Usuario {
     private int idUsuario;
     private String nombreUsuario;
     private String ape1;
-    private String ape2;
+    //private String ape2;
     private String dni;
     private String pass;
     private int telefono;
     private String email;
 
 
-    public Usuario (int idUsuario, String nombreUsuario, String ape1, String ape2, String dni, String pass, int telefono, String email){
+    public Usuario (int idUsuario, String nombreUsuario, String ape1/*, String ape2*/, String dni, String pass, int telefono, String email){
         this.idUsuario = idUsuario;
         this.nombreUsuario = nombreUsuario;
         this.ape1 = ape1;
-        this.ape2 = ape2;
+        //this.ape2 = ape2;
         this.dni = dni;
         this.pass = pass;
         this.telefono = telefono;
@@ -44,8 +44,8 @@ public class Usuario {
     public void setNombreUsuario(String nombreUsuario) { this.nombreUsuario = nombreUsuario; }
     public String getApe1() { return ape1; }
     public void setApe1(String ape1) { this.ape1 = ape1; }
-    public String getApe2() { return ape2; }
-    public void setApe2(String ape2) { this.ape2 = ape2; }
+    //public String getApe2() { return ape2; }
+    //public void setApe2(String ape2) { this.ape2 = ape2; }
     public String getPass() { return pass; }
     public void setPass(String pass) { this.pass = pass; }
     public int getTelefono() { return telefono; }
@@ -55,7 +55,7 @@ public class Usuario {
     public String getDni() { return dni; }
     public void setDni(String dni) { this.dni = dni; }
 
-
+/*
     public static ArrayList<Usuario> getArrayListFromJSon(JSONArray datos){
         ArrayList<Usuario> listaUsuario = null;
         Usuario usuario = null;
@@ -88,6 +88,6 @@ public class Usuario {
         return listaUsuario;
     }
 
-
+*/
 
 }

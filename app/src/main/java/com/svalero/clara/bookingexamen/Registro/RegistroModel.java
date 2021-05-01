@@ -24,7 +24,7 @@ public class RegistroModel implements RegistroContrato.Model{
         this.onRegistroListener = onRegistroListener;
         this.usuario = new Usuario();
 
-        String param = "USUARIO.ADD." + usuario.getPass() + "." + usuario.getNombreUsuario() + "." + usuario.getApe1() + "." + usuario.getApe2() + "." + usuario.getEmail() + "." + usuario.getDni() + "." + usuario.getTelefono();
+        String param = "USUARIO.ADD." + usuario.getPass() + "." + usuario.getNombreUsuario() + "." + usuario.getApe1() + "." + usuario.getEmail() + "." + usuario.getDni() + "." + usuario.getTelefono();
 
         ApiCliente apiCliente = new ApiCliente(context);
         final Call<ResponseBody> peticion = apiCliente.addUsuario(param);
@@ -42,21 +42,6 @@ public class RegistroModel implements RegistroContrato.Model{
                 onRegistroListener.rejectRegistro(t.getLocalizedMessage());
             }
         });
-        /*
-        peticion.enqueue(new Callback<Usuario>() {
-            @Override
-            public void onResponse(Call<Usuario> call, Response<Usuario> response) {
-                if (response.isSuccessful()) {
-                    onRegistroListener.resolveRegistro("Usuario añadido");
-                }
-            }
-
-            @Override
-            public void onFailure(Call<Usuario> call, Throwable t) {
-                t.printStackTrace();
-                onRegistroListener.rejectRegistro(t.getLocalizedMessage());
-            }
-        });*/
 
     }
 

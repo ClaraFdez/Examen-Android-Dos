@@ -26,7 +26,7 @@
         android:name="com.svalero.clara.bookingexamen.Fragments.MenuDosFragment">
 
     </fragment>
-
+<!--
     <TextView
         android:id="@+id/txt_ciudad_filtrar"
         android:layout_width="match_parent"
@@ -35,12 +35,12 @@
         android:textColor="@color/white"
         android:text="@string/ciudad_filtrar"
         android:textStyle="bold"/>
-
+-->
     <LinearLayout
         android:id="@+id/layout_ciudad_botones1"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="10"
+        android:layout_weight="12"
         android:weightSum="2"
         android:padding="@dimen/padding"
         android:orientation="horizontal"
@@ -51,12 +51,13 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginRight="5sp"
+            android:backgroundTint="@color/accent"
             android:layout_weight="1"
-            android:background="@color/accent"
+            app:cornerRadius="20dp"
             android:onClick="puntuacion"
             android:text="@string/ciudad_filtrar_puntuacion"
             android:textAlignment="center"
-            android:textColor="@color/black"
+            android:textColor="@color/text"
             android:textSize="10sp"
             android:clickable="true"/>
 
@@ -65,11 +66,12 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="#FFC107"
+            android:backgroundTint="@color/accent"
             android:onClick="masReservados"
             android:text="@string/ciudad_filtrar_reservados"
             android:textAlignment="center"
-            android:textColor="@color/black"
+            app:cornerRadius="20dp"
+            android:textColor="@color/text"
             android:layout_marginLeft="5sp"
             android:textSize="10sp"
             android:clickable="true"/>
@@ -80,38 +82,43 @@
         android:id="@+id/layout_ciudad_botones2"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="10"
+        android:layout_weight="12"
         android:weightSum="2"
         android:padding="@dimen/padding"
         android:orientation="horizontal">
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/bttPrecioAsc"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="#FFC107"
+            android:backgroundTint="@color/accent"
             android:onClick="precioAsc"
             android:text="@string/ciudad_filtrar_precio_asc"
             android:textAlignment="center"
-            android:textColor="@color/black"
+            app:cornerRadius="20dp"
+            android:textColor="@color/text"
             android:textSize="10sp"
             android:layout_marginRight="5sp"
-            android:clickable="true"/>
+            android:clickable="true">
+        </com.google.android.material.button.MaterialButton>
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/bttPrecioDes"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="#FFC107"
-            android:onClick="precioDes"
-            android:text="@string/ciudad_filtrar_precio_des"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="10sp"
             android:layout_marginLeft="5sp"
-            android:clickable="true"/>
+            android:textAlignment="center"
+            android:backgroundTint="@color/accent"
+            app:cornerRadius="20dp"
+            android:text="@string/ciudad_filtrar_precio_des"
+            android:textColor="@color/text"
+            android:onClick="precioDes"
+            android:textSize="10sp"
+            android:clickable="true"
+            >
+        </com.google.android.material.button.MaterialButton>
 
     </LinearLayout>
 
