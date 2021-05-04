@@ -9,6 +9,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.svalero.clara.bookingexamen.Ficha.FichaVista;
+import com.svalero.clara.bookingexamen.Inicio.InicioActivity;
 import com.svalero.clara.bookingexamen.ListarHabitaciones.ListarHabVista;
 import com.svalero.clara.bookingexamen.R;
 
@@ -96,7 +97,7 @@ public class ReservaVista extends AppCompatActivity implements ReservaContrato.V
     @Override
     public void successReserva(String success) {
         Toast.makeText(this, "Reservado con exito", Toast.LENGTH_LONG);
-        Intent intent = new Intent(this, ListarHabVista.class);
+        Intent intent = new Intent(this, InicioActivity.class);
         startActivity(intent);
     }
 

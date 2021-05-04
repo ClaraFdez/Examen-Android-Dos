@@ -34,15 +34,22 @@ public class ReservaModel implements ReservaContrato.Model{
         this.fechaInicio = fechaInicio;
         this.idHabitacion = idHabitacion;
 
-        String param = "RESERVA.RESERVAR."+idUsuario+"."+fechaInicio+"."+fechaFin;
+        System.out.println("idUsuario: "+idUsuario);//----------------------------------------
+        System.out.println("fechaFin: "+fechaFin);//----------------------------------------
+        System.out.println("fechaInicio: "+fechaInicio);//----------------------------------------
+        System.out.println("idHabitacion: "+idHabitacion);//----------------------------------------
+
+        String param = "RESERVA.RESERVAR."+idUsuario+"."+fechaInicio+"."+fechaFin+ "."+idHabitacion;
 
         ApiCliente apiCliente = new ApiCliente(context);
-        final Call<ArrayList<Reserva>> peticion = apiCliente.addReserva(param);
-        peticion.enqueue(new Callback<ArrayList<Reserva>>() {
+        final Call<ResponseBody> peticion = apiCliente.addReserva(param);
+        peticion.enqueue(new Callback<ResponseBody>() {
             @Override
-            public void onResponse(Call<ArrayList<Reserva>> call, Response<ArrayList<Reserva>> response) {
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                 if(response.isSuccessful()){
-                    String idReserva = Integer.toString(response.body().get(0).getIdReserva());
+                    onReservaListener.resolveReserva("Guardado con éxito");
+                    /*String idReserva = Integer.toString(response.body().get(0).getIdReserva());
+                    System.out.println("idReserva: "+response.body().get(0).getIdReserva());//----------------------------------------
 
                     String param1 = "RESERVA.SOBRE."+idReserva+"."+idHabitacion;
 
@@ -61,12 +68,12 @@ public class ReservaModel implements ReservaContrato.Model{
                             t.printStackTrace();
                            onReservaListener.rejectReserva(t.getLocalizedMessage());
                         }
-                    });
+                    });*/
                 }
             }
 
             @Override
-            public void onFailure(Call<ArrayList<Reserva>> call, Throwable t) {
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
                 t.printStackTrace();
                 onReservaListener.rejectReserva(t.getLocalizedMessage());
             }

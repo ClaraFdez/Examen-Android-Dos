@@ -28,6 +28,10 @@ public class HabitacionFragment extends Fragment implements ListarHabContrato.Vi
     private RecyclerView.LayoutManager layoutManager;
     private ListarHabPresenter listarHabPresenter;
 
+    String fechaInicio;
+    String fechaFin;
+    String nombreHotel;
+    String numPersonas;
 
     public HabitacionFragment() {
         // Required empty public constructor
@@ -41,13 +45,13 @@ public class HabitacionFragment extends Fragment implements ListarHabContrato.Vi
 
         View view = inflater.inflate(R.layout.fragment_habitacion, container, false);
 
-        String nombreHotel = getArguments().getString("nombreHotelPasado");
+        nombreHotel = getArguments().getString("nombreHotelPasado");
             System.out.println("habitacion fragment, nombreHotel: "+ nombreHotel);//------------------------------
-        String fechaInicio = getArguments().getString("fechaInicio");
+        fechaInicio = getArguments().getString("fechaInicio");
             System.out.println("habitacion fragmenta, fechaInicio: "+ fechaInicio);//------------------------------
-        String fechaFin = getArguments().getString("fechaFin");
+        fechaFin = getArguments().getString("fechaFin");
             System.out.println("habitacion fragment, fechaFin: "+ fechaFin);//------------------------------
-        String numPersonas = getArguments().getString("numPersonas");
+        numPersonas = getArguments().getString("numPersonas");
             System.out.println("habitacion fragment, numPersonas: "+ numPersonas);//------------------------------
 
         recyclerView = (RecyclerView) view.findViewById(R.id.reciclerHabitacion);
@@ -74,9 +78,9 @@ public class HabitacionFragment extends Fragment implements ListarHabContrato.Vi
                 //CUIDADO, AQUÍ HAY ALGO QUE PUEDE FALLAR
                 Intent intent = new Intent(getContext(), MainActivity.class);
                 intent.putExtra("IdHabitacion", listaHabitaciones.get(recyclerView.getChildAdapterPosition(v)).getIdHabitacion());
-                intent.putExtra("FechaInicio", /*fechaInicio); */listaHabitaciones.get(recyclerView.getChildAdapterPosition(v)).getFechaEntrada());
-                intent.putExtra("FechaFin", listaHabitaciones.get(recyclerView.getChildAdapterPosition(v)).getFechaSalida());
-                intent.putExtra("NombreHotel", listaHabitaciones.get(recyclerView.getChildAdapterPosition(v)).getNombreHotel());
+                intent.putExtra("FechaInicio", fechaInicio);
+                intent.putExtra("FechaFin", fechaFin);
+                intent.putExtra("NombreHotel", nombreHotel);
                 intent.putExtra("CamasIndi", listaHabitaciones.get(recyclerView.getChildAdapterPosition(v)).getCamasInd());
                 intent.putExtra("CamasMat", listaHabitaciones.get(recyclerView.getChildAdapterPosition(v)).getCamasMat());
                 intent.putExtra("Precio", listaHabitaciones.get(recyclerView.getChildAdapterPosition(v)).getPrecio());

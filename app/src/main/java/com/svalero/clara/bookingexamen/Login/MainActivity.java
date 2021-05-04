@@ -1,6 +1,8 @@
 package com.svalero.clara.bookingexamen.Login;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -34,11 +36,15 @@ public class MainActivity extends AppCompatActivity implements LoginContrato.Vie
     public String camasMat;
     public String precio;
 
+    private FragmentManager fragmentManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        fragmentManager = getSupportFragmentManager();
+        inicializar();
 
         inicializar();
 
@@ -122,7 +128,7 @@ public class MainActivity extends AppCompatActivity implements LoginContrato.Vie
                 i.putExtra("CamasIndi", camasIndi);
                 i.putExtra("CamasMat", camasMat);
                 i.putExtra("Precio", precio);
-                i.putExtra("Usuario", listaUsuario.get(0).getNombreUsuario());
+                i.putExtra("Usuario", listaUsuario.get(0).getNombre());
                 i.putExtra("Mail", listaUsuario.get(0).getEmail());
                 i.putExtra("Telefono", Integer.toString(listaUsuario.get(0).getTelefono()));
                 i.putExtra("IdUsuario", Integer.toString(listaUsuario.get(0).getId()));

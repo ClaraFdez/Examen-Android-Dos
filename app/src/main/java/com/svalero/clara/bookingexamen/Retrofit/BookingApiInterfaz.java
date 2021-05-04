@@ -46,7 +46,7 @@ public interface BookingApiInterfaz {
 
     //Inserta una reserva y nos la devuelve
     @POST("Controller")
-    Call<ArrayList<Reserva>> addReserva(@Query("ACTION") String params);
+    Call<ResponseBody> addReserva(@Query("ACTION") String params);
 
     //Inserta en la tabla Sobre
     @POST("Controller")

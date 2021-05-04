@@ -1,24 +1,24 @@
 package com.svalero.clara.bookingexamen.ListarHabitaciones;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import android.content.Intent;
+
+import android.app.DatePickerDialog;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Toast;
 
-import com.svalero.clara.bookingexamen.Adaptadores.HabitacionAdapter;
-import com.svalero.clara.bookingexamen.Beans.Habitacion;
 import com.svalero.clara.bookingexamen.Fragments.HabitacionFragment;
-import com.svalero.clara.bookingexamen.Fragments.ListarCiudadFragment;
-import com.svalero.clara.bookingexamen.Fragments.ListarFiltroFragment;
 import com.svalero.clara.bookingexamen.R;
-import com.svalero.clara.bookingexamen.Reserva.ReservaVista;
 
-import java.util.ArrayList;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
 // va a coger los datos y mandarlos al fragment que va a contener y este se encargará de buscar los datos y presentarlos
 
@@ -27,6 +27,10 @@ public class ListarHabVista extends AppCompatActivity /*implements ListarHabCont
     //private RecyclerView recyclerView;
    // private RecyclerView.LayoutManager layoutManager;
    // private ListarHabPresenter listarHabPresenter;
+    private int year, mes, dia;
+    private Date fechaIn, fechaOut;
+    public String fechaEntrada, fechaSalida;
+    public String formatFechaEntrada, formatFechaSalida;
 
     public String nombreHotel;
     public EditText fechaInicio;
@@ -53,6 +57,29 @@ public class ListarHabVista extends AppCompatActivity /*implements ListarHabCont
             System.out.println("listarhabvista budle, nombreHotel: "+ nombreHotel);//------------------------------
 
         inicializar();
+
+        fechaInicio.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.N)
+            @Override
+            public void onClick(View v) {
+                System.out.println("entrando en fecha inicia");
+                elegirFechaEntrada(v);
+            }
+        });
+
+        fechaFin.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.N)
+            @Override
+            public void onClick(View v) {
+                System.out.println("entrando en fecha fin");
+                elegirFechaSalida(v);
+            }
+        });
+/*
+
+
+
+
 
         /*Bundle argumentos = new Bundle();
         argumentos.putString("nombreHotelPasado", nombreHotel);
@@ -102,6 +129,47 @@ public class ListarHabVista extends AppCompatActivity /*implements ListarHabCont
         fragmentTransaction.replace(R.id.layout_contenedor_habitacion, habitacionFragment);
         fragmentTransaction.commit();
     }
+
+
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    public void elegirFechaEntrada(View v) {
+        if(v == fechaInicio){
+            final Calendar calendar = Calendar.getInstance();
+            year = calendar.get(Calendar.YEAR);
+            mes = calendar.get(Calendar.MONTH);
+            dia = calendar.get(Calendar.DAY_OF_MONTH);
+
+            DatePickerDialog datePickerDialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
+                @Override
+                public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                    fechaInicio.setText(dayOfMonth+ "/" +(month + 1)+ "/" + year);
+                }
+            }, dia, mes, year);
+            datePickerDialog.show();
+        }
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    public void elegirFechaSalida(View v) {
+        if(v == fechaFin){
+            final Calendar calendar = Calendar.getInstance();
+            year = calendar.get(Calendar.YEAR);
+            mes = calendar.get(Calendar.MONTH);
+            dia = calendar.get(Calendar.DAY_OF_MONTH);
+
+            DatePickerDialog datePickerDialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
+                @Override
+                public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                    fechaFin.setText(dayOfMonth+ "/" +(month + 1)+ "/" + year);
+                }
+            }, dia, mes, year);
+            datePickerDialog.show();
+        }
+    }
+
+
+
+
 
 /*
     @Override

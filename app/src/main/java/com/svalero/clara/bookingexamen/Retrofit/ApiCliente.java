@@ -51,7 +51,8 @@ public class ApiCliente {
     }
 
     public Call<ArrayList<Habitacion>> getHabitacion(String param){
-        BookingApiInterfaz bookingApiInterfaz =retrofit.create(BookingApiInterfaz.class);
+        BookingApiInterfaz bookingApiInterfaz = retrofit.create(BookingApiInterfaz.class);
+        System.out.println("apicliente: "+bookingApiInterfaz.getHabitacion(param).toString());//---------------------------
         return bookingApiInterfaz.getHabitacion(param);
     }
 
@@ -65,7 +66,7 @@ public class ApiCliente {
         return bookingApiInterfaz.addUsuario(param);
     }
 
-    public Call<ArrayList<Reserva>> addReserva(String param){
+    public Call<ResponseBody> addReserva(String param){
         BookingApiInterfaz bookingApiInterfaz = retrofit.create(BookingApiInterfaz.class);
         return bookingApiInterfaz.addReserva(param);
     }

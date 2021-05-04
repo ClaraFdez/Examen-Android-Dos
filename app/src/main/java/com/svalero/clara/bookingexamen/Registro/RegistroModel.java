@@ -24,7 +24,7 @@ public class RegistroModel implements RegistroContrato.Model{
         this.onRegistroListener = onRegistroListener;
         this.usuario = new Usuario();
 
-        String param = "USUARIO.ADD." + usuario.getPass() + "." + usuario.getNombreUsuario() + "." + usuario.getApe1() + "." + usuario.getEmail() + "." + usuario.getDni() + "." + usuario.getTelefono();
+        String param = "USUARIO.ADD." + usuario.getPass() + "." + usuario.getNombre() + "." + usuario.getApe1() + "." + usuario.getEmail() + "." + usuario.getDni() + "." + usuario.getTelefono();
 
         ApiCliente apiCliente = new ApiCliente(context);
         final Call<ResponseBody> peticion = apiCliente.addUsuario(param);

@@ -7,13 +7,14 @@
     tools:context=".ListarHabitaciones.ListarHabVista"
     android:weightSum="100"
     android:orientation="vertical"
-    android:background="#253383">
+    android:background="#253383"
+    android:padding="@dimen/padding">
 
     <fragment
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:id="@+id/fragHabitacion"
-        android:name="com.svalero.clara.bookingexamen.Fragments.MenuDosFragment">>
+        android:name="com.svalero.clara.bookingexamen.Fragments.MenuDosFragment">
 
     </fragment>
 
@@ -24,7 +25,7 @@
         android:layout_weight="5"
         android:textColor="@color/white"
         android:textStyle="bold"
-        android:textSize="20sp"
+        android:textSize="18dp"
         android:text="@string/ficha_buscar_habitacion"/>
 
     <LinearLayout
@@ -88,9 +89,13 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:ems="10"
+                android:textAlignment="center"
                 android:inputType="date"
-                android:hint="entrada (dd-mm-yyyy)"
-                android:textSize="17sp"
+                android:hint="@string/hab_fecha"
+                android:focusable="false"
+                android:clickable="true"
+                android:maxLines="1"
+                android:textSize="15dp"
                 android:background="@color/white"
                 android:textColor="@color/black"
                 android:layout_marginTop="5sp"/>
@@ -100,10 +105,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
+                android:textAlignment="center"
                 android:ems="10"
                 android:inputType="date"
-                android:hint="salida (dd-mm-yyyy)"
-                android:textSize="17sp"
+                android:hint="@string/hab_fecha"
+                android:focusable="false"
+                android:clickable="true"
+                android:maxLines="1"
+                android:textSize="15dp"
                 android:background="@color/white"
                 android:textColor="@color/black"
                 android:layout_marginTop="5sp"
@@ -115,14 +124,16 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:ems="10"
-                android:inputType="date"
-                android:textSize="17sp"
+                android:textAlignment="center"
+                android:inputType="number"
+                android:textSize="15dp"
                 android:background="@color/white"
                 android:textColor="@color/black"
                 android:layout_marginTop="5sp"
                 />
 
         </LinearLayout>
+        <!--
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -138,14 +149,37 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:background="#FBF08E"
+                android:backgroundTint="@color/accent"
+                app:cornerRadius="10dp"
                 android:text="@string/hab_buscar"
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 android:layout_marginLeft="15sp"
                 android:onClick="buscarHabitacion"/>
         </LinearLayout>
+-->
 
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            >
+
+            <Button
+                android:id="@+id/bttFechas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="@dimen/padding"
+                android:layout_centerHorizontal="true"
+                android:backgroundTint="@color/accent"
+                app:cornerRadius="10dp"
+                android:textSize="10dp"
+                android:text="@string/hab_buscar"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:onClick="buscarHabitacion"/>
+        </RelativeLayout>
     </LinearLayout>
 
     <LinearLayout

@@ -13,8 +13,8 @@ import java.util.ArrayList;
 
 public class Usuario {
 
-    private int idUsuario;
-    private String nombreUsuario;
+    private int id_usuario;
+    private String nombre;
     private String ape1;
     //private String ape2;
     private String dni;
@@ -23,9 +23,9 @@ public class Usuario {
     private String email;
 
 
-    public Usuario (int idUsuario, String nombreUsuario, String ape1/*, String ape2*/, String dni, String pass, int telefono, String email){
-        this.idUsuario = idUsuario;
-        this.nombreUsuario = nombreUsuario;
+    public Usuario (int id_usuario, String nombre, String ape1/*, String ape2*/, String dni, String pass, int telefono, String email){
+        this.id_usuario = id_usuario;
+        this.nombre = nombre;
         this.ape1 = ape1;
         //this.ape2 = ape2;
         this.dni = dni;
@@ -38,10 +38,10 @@ public class Usuario {
 
     }
 
-    public int getId() { return idUsuario; }
-    public void setId(int idUsuario) { this.idUsuario = idUsuario; }
-    public String getNombreUsuario() { return nombreUsuario; }
-    public void setNombreUsuario(String nombreUsuario) { this.nombreUsuario = nombreUsuario; }
+    public int getId() { return id_usuario; }
+    public void setId(int idUsuario) { this.id_usuario = idUsuario; }
+    public String getNombre() { return nombre; }
+    public void setNombreUsuario(String nombreUsuario) { this.nombre = nombre; }
     public String getApe1() { return ape1; }
     public void setApe1(String ape1) { this.ape1 = ape1; }
     //public String getApe2() { return ape2; }

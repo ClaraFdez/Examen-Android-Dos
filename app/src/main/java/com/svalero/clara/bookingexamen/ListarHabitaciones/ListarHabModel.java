@@ -33,9 +33,12 @@ public class ListarHabModel implements ListarHabContrato.Model{
 
         ApiCliente apiCliente = new ApiCliente(context);
         final Call<ArrayList<Habitacion>> peticion = apiCliente.getHabitacion(param);
+        System.out.println("model: "+peticion);//---------------------------
         peticion.enqueue(new Callback<ArrayList<Habitacion>>() {
             @Override
             public void onResponse(Call<ArrayList<Habitacion>> call, Response<ArrayList<Habitacion>> response) {
+                //System.out.println("response: "+response.body().get(0).getNumPersonas());//---------------------------
+                //System.out.println("response: "+response.body().get(0).getPrecio());//---------------------------
                 if(response.isSuccessful()){
                     onListarHabitacionListener.resolveHab(response.body());
                 }
