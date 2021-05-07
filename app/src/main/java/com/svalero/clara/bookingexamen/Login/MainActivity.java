@@ -70,6 +70,7 @@ public class MainActivity extends AppCompatActivity implements LoginContrato.Vie
     }
 
     public void errorUsuario(){
+        System.out.println("dentro del login errorUsuario");//---------------------------------
         Toast.makeText(this, "Usuario o contraseña incorrectos", Toast.LENGTH_SHORT).show();
     }
 
@@ -114,8 +115,11 @@ public class MainActivity extends AppCompatActivity implements LoginContrato.Vie
 
     @Override
     public void success(ArrayList<Usuario> listaUsuario) {
-        if(! listaUsuario.isEmpty()) {
-            if((listaUsuario.get(0).getEmail()).equalsIgnoreCase("null")){
+        System.out.println("1 dentro del login success");//---------------------------------
+        if( listaUsuario.isEmpty()) {
+            System.out.println("2 dentro del login success");//---------------------------------
+            //if((listaUsuario.get(0).getEmail()).equalsIgnoreCase("null")){
+                System.out.println("3 dentro del login success");//---------------------------------
                errorUsuario();
                edtLoginPass.setText("");
                edtLoginUsuario.setText("");
@@ -134,7 +138,7 @@ public class MainActivity extends AppCompatActivity implements LoginContrato.Vie
                 i.putExtra("IdUsuario", Integer.toString(listaUsuario.get(0).getId()));
                 startActivity(i);
             }
-        }
+       // }
     }
 
     @Override

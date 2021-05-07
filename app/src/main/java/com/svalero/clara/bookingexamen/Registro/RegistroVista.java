@@ -16,14 +16,13 @@ public class RegistroVista extends AppCompatActivity implements RegistroContrato
 
     private EditText edtRegistroNombre;
     private EditText edtRegistroApe1;
-    //private EditText edtRegistroApe2;
     private EditText edtRegistrodni;
     private EditText edtRegistroTelefono;
     private EditText edtRegistroEmail;
     private EditText edtRegistroPass;
-    //private Button bttRegistroAceptar;
 
-    String nombre, ape1, ape2, dni, email, pass;
+
+    String nombre, ape1, dni, email, pass;
     int tlf;
 
     public String idHabitacion;
@@ -44,6 +43,8 @@ public class RegistroVista extends AppCompatActivity implements RegistroContrato
 
         inicializar();
 
+
+
         Bundle bundle = getIntent().getExtras();
         idHabitacion = Integer.toString(bundle.getInt("IdHabitacion"));
         fechaInicio = bundle.getString("FechaInicio");
@@ -62,6 +63,7 @@ public class RegistroVista extends AppCompatActivity implements RegistroContrato
         edtRegistroTelefono = findViewById(R.id.edtRegistroTelefono);
         edtRegistroEmail = findViewById(R.id.edtRegistroEmail);
         edtRegistroPass = findViewById(R.id.edtRegistroPass);
+
     }
 
     public void registrarse(View view){
@@ -90,6 +92,7 @@ public class RegistroVista extends AppCompatActivity implements RegistroContrato
 
     @Override
     public void successRegistro(String success) {
+
         registrado(success);
         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         intent.putExtra("IdHabitacion", idHabitacion);

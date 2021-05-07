@@ -19,18 +19,14 @@ import com.svalero.clara.bookingexamen.R;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.TimeZone;
 
 // va a coger los datos y mandarlos al fragment que va a contener y este se encargará de buscar los datos y presentarlos
 
 public class ListarHabVista extends AppCompatActivity /*implements ListarHabContrato.View*/ {
 
-    //private RecyclerView recyclerView;
-   // private RecyclerView.LayoutManager layoutManager;
-   // private ListarHabPresenter listarHabPresenter;
-    private int year, mes, dia;
-    private Date fechaIn, fechaOut;
-    public String fechaEntrada, fechaSalida;
-    public String formatFechaEntrada, formatFechaSalida;
+
+    private int mes, dia, year;
 
     public String nombreHotel;
     public EditText fechaInicio;
@@ -134,8 +130,8 @@ public class ListarHabVista extends AppCompatActivity /*implements ListarHabCont
     @RequiresApi(api = Build.VERSION_CODES.N)
     public void elegirFechaEntrada(View v) {
         if(v == fechaInicio){
-            final Calendar calendar = Calendar.getInstance();
-            year = calendar.get(Calendar.YEAR);
+            final Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
+        year = calendar.get(Calendar.YEAR);
             mes = calendar.get(Calendar.MONTH);
             dia = calendar.get(Calendar.DAY_OF_MONTH);
 
@@ -144,7 +140,7 @@ public class ListarHabVista extends AppCompatActivity /*implements ListarHabCont
                 public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
                     fechaInicio.setText(dayOfMonth+ "/" +(month + 1)+ "/" + year);
                 }
-            }, dia, mes, year);
+            }, year , mes , dia);
             datePickerDialog.show();
         }
     }
@@ -162,7 +158,7 @@ public class ListarHabVista extends AppCompatActivity /*implements ListarHabCont
                 public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
                     fechaFin.setText(dayOfMonth+ "/" +(month + 1)+ "/" + year);
                 }
-            }, dia, mes, year);
+            }, year, mes, dia);
             datePickerDialog.show();
         }
     }

@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 
+import com.svalero.clara.bookingexamen.Fin.Fin;
 import com.svalero.clara.bookingexamen.ListarTodo.ListarTodoVista;
 import com.svalero.clara.bookingexamen.R;
 
@@ -58,7 +59,10 @@ public class MenuDosFragment extends Fragment {
         bttMenuDosSalir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.exit(0);
+
+                //System.exit(0);
+                Intent intent = new Intent(view.getContext(), Fin.class);
+                startActivity(intent);
             }
         });
 

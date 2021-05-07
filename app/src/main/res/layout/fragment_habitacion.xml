@@ -13,4 +13,50 @@
         android:layout_height="match_parent"
         />
 
+    <!-- Progress Bar -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/layout_habitacion_progressBar">
+
+        <ProgressBar
+            android:id="@+id/frag_habitacion_progressBar"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerInParent="true"
+            />
+
+    </RelativeLayout>
+
+    <!-- Pantalla de Error -->
+
+    <RelativeLayout
+        android:id="@+id/layoutError"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        >
+        <TextView
+            android:id="@+id/txt_habitacion_error"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/todo_error"
+            android:textColor="@color/white"
+            android:layout_centerHorizontal="true"
+            android:layout_centerInParent="true"/>
+
+        <Button
+            android:id="@+id/bttReintentar"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_habitacion_error"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:clickable="true"
+            android:text="@string/todo_boton_reintentar" />
+
+    </RelativeLayout>
+
 </FrameLayout>

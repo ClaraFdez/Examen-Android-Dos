@@ -38,8 +38,6 @@
     <string name="reserva_datoscliente">DATOS PERSONALES</string>
     <string name="reserva_datoshabitacion">DATOS DE LA RESERVA</string>
     <string name="hab_fecha">dd/mm/aaaa</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-
+    <string name="fin">Gracias por su visita</string>
 
 </resources>

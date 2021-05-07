@@ -22,11 +22,12 @@ public class FichaVista extends AppCompatActivity implements FichaContrato.View{
     private TextView txtFichaDir;
     private TextView txtFichaDes;
     private ImageView imagen;
-    //private EditText edtFechaInicio;
-    //private EditText edtFechaFin;
     private TextView txtPuntuacion;
     private TextView txtEstrellas;
-    //private EditText numPersonas;
+
+    private View layoutCargando;
+    private View layoutError;
+    private View layoutFicha;
 
     private FichaPresenter fichaPresenter;
     public String nombreHotelPasado;
@@ -41,9 +42,12 @@ public class FichaVista extends AppCompatActivity implements FichaContrato.View{
 
         inicializar();
 
+        layoutCargando.setVisibility(View.VISIBLE);
+        layoutError.setVisibility(View.GONE);
+        layoutFicha.setVisibility(View.GONE);
+
         fichaPresenter = new FichaPresenter(this);
         fichaPresenter.getHotelFicha(this, nombreHotelPasado);
-
 
     }
 
@@ -53,16 +57,7 @@ public class FichaVista extends AppCompatActivity implements FichaContrato.View{
         Intent intent = new Intent(getApplicationContext(), ListarTodoVista.class);
         startActivity(intent);
     }
-/*
-    public void buscarHabitacion(View v){
-        Intent intent = new Intent(getApplicationContext(), ListarHabVista.class);
-        intent.putExtra("fechaentrada", edtFechaInicio.getText().toString());
-        intent.putExtra("fechasalida", edtFechaFin.getText().toString());
-        intent.putExtra("numPersonas", numPersonas.getText().toString());
-        intent.putExtra("nombreHotelPasado", nombreHotelPasado);
-        startActivity(intent);
-    }
-*/
+
     //pasamos el nombre del hotel para luego unirlo a los datos de fecha y ver las habitaciones disponibles
     public void buscarDisponibilidad(View view){
         Intent intent = new Intent(getApplicationContext(), ListarHabVista.class);
@@ -77,11 +72,12 @@ public class FichaVista extends AppCompatActivity implements FichaContrato.View{
         txtFichaDir = findViewById(R.id.txtFichaDir);
         txtFichaDes = findViewById(R.id.txtFichaDes);
         imagen = findViewById(R.id.imagenFicha);
-        //edtFechaInicio = findViewById(R.id.edtFechaInicio);
-        //edtFechaFin = findViewById(R.id.edtFechaFin);
         txtPuntuacion = findViewById(R.id.txtFichaPuntuacion);
         txtEstrellas = findViewById(R.id.txtFichaEstrellas);
-        //numPersonas = findViewById(R.id.edtNumPersonas);
+
+        layoutCargando = findViewById(R.id.layout_ficha_progressBar);
+        layoutError = findViewById(R.id.layoutError);
+        layoutFicha = findViewById(R.id.layout_ficha);
     }
 
 
@@ -113,8 +109,17 @@ public class FichaVista extends AppCompatActivity implements FichaContrato.View{
     }
 
 
+    public void botonReintentarFicha(View view){
+        layoutCargando.setVisibility(View.VISIBLE);
+        fichaPresenter.getHotelFicha(this, nombreHotelPasado);
+    }
+
+
     @Override
     public void successHotel(ArrayList<Hotel> listaHoteles) {
+        layoutCargando.setVisibility(View.GONE);
+        layoutError.setVisibility(View.GONE);
+        layoutFicha.setVisibility(View.VISIBLE);
 
         txtFichaNom.setText(listaHoteles.get(0).getNombre());
         String direccion = listaHoteles.get(0).getCalle() + ", " +listaHoteles.get(0).getCiudad();
@@ -130,6 +135,9 @@ public class FichaVista extends AppCompatActivity implements FichaContrato.View{
 
     @Override
     public void errorHotel(String message) {
+        layoutCargando.setVisibility(View.GONE);
+        layoutError.setVisibility(View.VISIBLE);
+        layoutFicha.setVisibility(View.GONE);
         message = "Error en la obtención de los datos del hotel";
     }
 

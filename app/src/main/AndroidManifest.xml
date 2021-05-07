@@ -12,6 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BookingExamen">
+        <activity android:name=".Fin.Fin"></activity>
         <activity android:name=".Inicio.InicioActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,9 +27,7 @@
         <activity android:name=".ListarFiltro.ListarFiltroVista" />
         <activity android:name=".ListarCiudad.ListarCiudadVista" />
         <activity android:name=".Ficha.FichaVista" />
-        <activity android:name=".Login.MainActivity"/>
-
-
+        <activity android:name=".Login.MainActivity" />
     </application>
 
 </manifest>
