@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -96,13 +97,23 @@ public class ReservaVista extends AppCompatActivity implements ReservaContrato.V
 
     @Override
     public void successReserva(String success) {
-        Toast.makeText(this, "Reservado con exito", Toast.LENGTH_LONG);
+
+        final Handler handler = new Handler();
+        handler.postDelayed(()-> {
+            Toast.makeText(this, "Reservado con exito", Toast.LENGTH_LONG);
+            this.finish();
+        }, 2500);
+
+        //Toast.makeText(this, "Reservado con exito", Toast.LENGTH_LONG);
         Intent intent = new Intent(this, InicioActivity.class);
         startActivity(intent);
     }
 
     @Override
     public void errorReserva(String mensaje) {
+
+
+
         Toast.makeText(this, "Error en la reserva", Toast.LENGTH_LONG);
         Intent intent = new Intent(this, FichaVista.class);
         startActivity(intent);
