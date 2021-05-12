@@ -1,19 +1,7 @@
 package com.svalero.clara.bookingexamen.Reserva;
 
 import android.content.Context;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.widget.Toast;
-
-import androidx.appcompat.app.AlertDialog;
-
-import com.svalero.clara.bookingexamen.Beans.Habitacion;
-import com.svalero.clara.bookingexamen.Beans.Reserva;
-import com.svalero.clara.bookingexamen.Ficha.FichaVista;
 import com.svalero.clara.bookingexamen.Retrofit.ApiCliente;
-
-import java.util.ArrayList;
-
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -34,11 +22,6 @@ public class ReservaModel implements ReservaContrato.Model{
         this.fechaInicio = fechaInicio;
         this.idHabitacion = idHabitacion;
 
-        System.out.println("idUsuario: "+idUsuario);//----------------------------------------
-        System.out.println("fechaFin: "+fechaFin);//----------------------------------------
-        System.out.println("fechaInicio: "+fechaInicio);//----------------------------------------
-        System.out.println("idHabitacion: "+idHabitacion);//----------------------------------------
-
         String param = "RESERVA.RESERVAR."+idUsuario+"."+fechaInicio+"."+fechaFin+ "."+idHabitacion;
 
         ApiCliente apiCliente = new ApiCliente(context);
@@ -48,27 +31,6 @@ public class ReservaModel implements ReservaContrato.Model{
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                 if(response.isSuccessful()){
                     onReservaListener.resolveReserva("Guardado con éxito");
-                    /*String idReserva = Integer.toString(response.body().get(0).getIdReserva());
-                    System.out.println("idReserva: "+response.body().get(0).getIdReserva());//----------------------------------------
-
-                    String param1 = "RESERVA.SOBRE."+idReserva+"."+idHabitacion;
-
-                    ApiCliente apiCliente1 = new ApiCliente(context);
-                    final Call<ResponseBody> peticion1 = apiCliente1.addSobre(param1);
-                    peticion1.enqueue(new Callback<ResponseBody>() {
-                        @Override
-                        public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                            if(response.isSuccessful()){
-                                onReservaListener.resolveReserva("Guardado con éxito");
-                            }
-                        }
-
-                        @Override
-                        public void onFailure(Call<ResponseBody> call, Throwable t) {
-                            t.printStackTrace();
-                           onReservaListener.rejectReserva(t.getLocalizedMessage());
-                        }
-                    });*/
                 }
             }
 

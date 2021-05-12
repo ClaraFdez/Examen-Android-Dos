@@ -3,7 +3,6 @@ package com.svalero.clara.bookingexamen.ListarCiudad;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import android.view.View;
 import com.svalero.clara.bookingexamen.Fragments.ListarCiudadFragment;
@@ -96,7 +95,7 @@ public class ListarCiudadVista extends AppCompatActivity{
 
     public void botonReintentarciudad(View v){
         layoutListarCiudadProgressBar.setVisibility(View.VISIBLE);
-       // listarCiudadPresenter.getHotelesDestino(this, destinopasado);
+
     }
 
     public void inicializar(){

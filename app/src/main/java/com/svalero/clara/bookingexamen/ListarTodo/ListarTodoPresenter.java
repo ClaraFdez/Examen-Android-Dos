@@ -1,10 +1,9 @@
 package com.svalero.clara.bookingexamen.ListarTodo;
 
 import android.content.Context;
-
 import com.svalero.clara.bookingexamen.Beans.Hotel;
 import java.util.ArrayList;
-import java.util.List;
+
 
 public class ListarTodoPresenter implements ListarTodoContrato.Presenter{
 
@@ -22,13 +21,11 @@ public class ListarTodoPresenter implements ListarTodoContrato.Presenter{
 
     @Override
     public void getHoteles(Context context) {
-    //public void getHoteles(){
 
         this.model.getListarTodoWS(context, new ListarTodoContrato.Model.OnListarTodoListener() {
-            //this.model.getListarTodoWS(new ListarTodoContrato.Model.OnListarTodoListener() {
+
             @Override
             public void resolve(ArrayList<Hotel> listaHoteles) {
-                System.out.println(("presenter: dentro del resolve"+listaHoteles));//---------------------------------
                 vista.success(listaHoteles);
             }
 

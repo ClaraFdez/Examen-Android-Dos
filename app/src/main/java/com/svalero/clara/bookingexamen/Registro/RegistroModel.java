@@ -1,13 +1,9 @@
 package com.svalero.clara.bookingexamen.Registro;
 
-
 import android.content.Context;
-
 import com.svalero.clara.bookingexamen.Beans.Usuario;
 import com.svalero.clara.bookingexamen.Retrofit.ApiCliente;
-
 import java.util.ArrayList;
-
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;

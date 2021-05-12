@@ -3,25 +3,19 @@ package com.svalero.clara.bookingexamen.Adaptadores;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.RatingBar;
 import android.widget.TextView;
-
-import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.squareup.picasso.Picasso;
 import com.svalero.clara.bookingexamen.Beans.Hotel;
 import com.svalero.clara.bookingexamen.R;
 
 import java.util.ArrayList;
-import java.util.List;
+
 
 public class ListarTodoAdapter extends RecyclerView.Adapter<ListarTodoAdapter.HotelViewHolder> implements View.OnClickListener {
 
     private ArrayList<Hotel> listaHoteles;
-    //private List<Hotel> listaHoteles;
     private View.OnClickListener listener;
 
     public static class HotelViewHolder extends RecyclerView.ViewHolder{
@@ -30,8 +24,6 @@ public class ListarTodoAdapter extends RecyclerView.Adapter<ListarTodoAdapter.Ho
         public TextView edtTodoNombre;
         public TextView edtTodoCiudad;
         public TextView edtPuntuacion;
-
-
 
 
         public HotelViewHolder(View v){
@@ -49,9 +41,6 @@ public class ListarTodoAdapter extends RecyclerView.Adapter<ListarTodoAdapter.Ho
         this.listaHoteles = listaHoteles;
     }
 
-    /*public ListarTodoAdapter (List<Hotel> listaHoteles){
-        this.listaHoteles = listaHoteles;
-    }*/
 
     @Override
     public void onClick(View v) {
@@ -91,7 +80,6 @@ public class ListarTodoAdapter extends RecyclerView.Adapter<ListarTodoAdapter.Ho
     public int getItemCount() {
         return listaHoteles.size();
     }
-
 
 
 }

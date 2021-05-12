@@ -1,9 +1,6 @@
 package com.svalero.clara.bookingexamen.Login;
 
-
-
 import android.content.Context;
-
 import com.svalero.clara.bookingexamen.Beans.Usuario;
 import java.util.ArrayList;
 

@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 import com.svalero.clara.bookingexamen.Beans.Usuario;
@@ -43,16 +42,14 @@ public class RegistroVista extends AppCompatActivity implements RegistroContrato
 
         inicializar();
 
-
-
         Bundle bundle = getIntent().getExtras();
-        idHabitacion = Integer.toString(bundle.getInt("IdHabitacion"));
+        idHabitacion = bundle.getString("IdHabitacion");
         fechaInicio = bundle.getString("FechaInicio");
         fechaFin = bundle.getString("FechaFin");
-        camasIndi = Integer.toString(bundle.getInt("CamasIndi"));
+        camasIndi = bundle.getString("CamasIndi");
         nombreHotel = bundle.getString("NombreHotel");
-        camasMat = Integer.toString(bundle.getInt("CamasMat"));
-        precio = Integer.toString(bundle.getInt("Precio"));
+        camasMat = bundle.getString("CamasMat");
+        precio = bundle.getString("Precio");
 
     }
 
@@ -92,16 +89,21 @@ public class RegistroVista extends AppCompatActivity implements RegistroContrato
 
     @Override
     public void successRegistro(String success) {
+        int idH, cind, cmat, pre;
+        idH = Integer.parseInt(idHabitacion);
+        cind = Integer.parseInt(camasIndi);
+        cmat = Integer.parseInt(camasMat);
+        pre = Integer.parseInt(precio);
 
         registrado(success);
         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-        intent.putExtra("IdHabitacion", idHabitacion);
+        intent.putExtra("IdHabitacion", idH);
         intent.putExtra("FechaInicio", fechaInicio);
         intent.putExtra("FechaFin", fechaFin);
         intent.putExtra("NombreHotel", nombreHotel);
-        intent.putExtra("CamasIndi", camasIndi);
-        intent.putExtra("CamasMat", camasMat);
-        intent.putExtra("Precio", precio);
+        intent.putExtra("CamasIndi", cind);
+        intent.putExtra("CamasMat", cmat);
+        intent.putExtra("Precio", pre);
         startActivity(intent);
     }
 
@@ -112,11 +114,11 @@ public class RegistroVista extends AppCompatActivity implements RegistroContrato
 
 
     public void registrado(String success){
-        Toast.makeText(this, success, Toast.LENGTH_LONG);
+        Toast.makeText(this, success, Toast.LENGTH_LONG).show();
     }
 
     public void noRegistrado(String mensaje){
-        Toast.makeText(this, mensaje, Toast.LENGTH_LONG);
+        Toast.makeText(this, mensaje, Toast.LENGTH_LONG).show();
     }
 
 }

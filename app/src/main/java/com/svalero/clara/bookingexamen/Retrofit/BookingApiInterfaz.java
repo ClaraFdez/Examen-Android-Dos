@@ -2,12 +2,8 @@ package com.svalero.clara.bookingexamen.Retrofit;
 
 import com.svalero.clara.bookingexamen.Beans.Habitacion;
 import com.svalero.clara.bookingexamen.Beans.Hotel;
-import com.svalero.clara.bookingexamen.Beans.Reserva;
 import com.svalero.clara.bookingexamen.Beans.Usuario;
-
 import java.util.ArrayList;
-import java.util.List;
-
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.GET;

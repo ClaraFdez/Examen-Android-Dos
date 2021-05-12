@@ -18,7 +18,6 @@ import com.svalero.clara.bookingexamen.ListarHabitaciones.ListarHabContrato;
 import com.svalero.clara.bookingexamen.ListarHabitaciones.ListarHabPresenter;
 import com.svalero.clara.bookingexamen.Login.MainActivity;
 import com.svalero.clara.bookingexamen.R;
-import com.svalero.clara.bookingexamen.Reserva.ReservaVista;
 
 import java.util.ArrayList;
 
@@ -39,25 +38,20 @@ public class HabitacionFragment extends Fragment implements ListarHabContrato.Vi
     private Button bttReintentar;
 
     public HabitacionFragment() {
-        // Required empty public constructor
+
     }
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
 
         View view = inflater.inflate(R.layout.fragment_habitacion, container, false);
 
         nombreHotel = getArguments().getString("nombreHotelPasado");
-            System.out.println("habitacion fragment, nombreHotel: "+ nombreHotel);//------------------------------
         fechaInicio = getArguments().getString("fechaInicio");
-            System.out.println("habitacion fragmenta, fechaInicio: "+ fechaInicio);//------------------------------
         fechaFin = getArguments().getString("fechaFin");
-            System.out.println("habitacion fragment, fechaFin: "+ fechaFin);//------------------------------
         numPersonas = getArguments().getString("numPersonas");
-            System.out.println("habitacion fragment, numPersonas: "+ numPersonas);//------------------------------
 
         recyclerView = (RecyclerView) view.findViewById(R.id.reciclerHabitacion);
         layoutCargando = (View) view.findViewById(R.id.layout_habitacion_progressBar);
@@ -91,15 +85,13 @@ public class HabitacionFragment extends Fragment implements ListarHabContrato.Vi
         layoutCargando.setVisibility(View.GONE);
         layoutError.setVisibility(View.GONE);
         recyclerView.setVisibility(View.VISIBLE);
-        System.out.println("dentro del success de habitacion fragment");//---------------------------------------
+
         HabitacionAdapter adapter = new HabitacionAdapter(listaHabitaciones);
-        System.out.println("a ver si se ve algo, es listahabitacines en success de habfragment: "+listaHabitaciones);//-----------------------
         recyclerView.setAdapter(adapter);
         adapter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                //CUIDADO, AQUÍ HAY ALGO QUE PUEDE FALLAR
                 Intent intent = new Intent(getContext(), MainActivity.class);
                 intent.putExtra("IdHabitacion", listaHabitaciones.get(recyclerView.getChildAdapterPosition(v)).getIdHabitacion());
                 intent.putExtra("FechaInicio", fechaInicio);

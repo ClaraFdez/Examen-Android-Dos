@@ -5,10 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.squareup.picasso.Picasso;
 import com.svalero.clara.bookingexamen.Beans.Hotel;
 import com.svalero.clara.bookingexamen.R;
@@ -27,8 +24,6 @@ public class CiudadAdapter extends RecyclerView.Adapter<CiudadAdapter.CiudadView
         public TextView edtCiudad;
         public TextView edtCiudadPuntuacion;
         public TextView edtPrecio;
-
-
 
 
         public CiudadViewHolder(View v){

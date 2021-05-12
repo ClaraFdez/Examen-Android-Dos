@@ -1,17 +1,14 @@
 package com.svalero.clara.bookingexamen.Reserva;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.svalero.clara.bookingexamen.Ficha.FichaVista;
 import com.svalero.clara.bookingexamen.Inicio.InicioActivity;
-import com.svalero.clara.bookingexamen.ListarHabitaciones.ListarHabVista;
 import com.svalero.clara.bookingexamen.R;
 
 public class ReservaVista extends AppCompatActivity implements ReservaContrato.View{
@@ -43,27 +40,16 @@ public class ReservaVista extends AppCompatActivity implements ReservaContrato.V
 
         Bundle bundle = getIntent().getExtras();
         idHabitacion = bundle.getString("IdHabitacion");
-            System.out.println("reserva vista, idhabitacion: "+ idHabitacion);//------------------------------
         fechaInicio = bundle.getString("FechaInicio");
-            System.out.println("reserva vista, fechaInicio: "+ fechaInicio);//------------------------------
         fechaFin = bundle.getString("FechaFin");
-             System.out.println("reserva vista, fechaFin: "+ fechaFin);//------------------------------
         idUsuario = bundle.getString("IdUsuario");
-            System.out.println("reserva vista, idUsuario: "+ idUsuario);//------------------------------
         nombreHotel = bundle.getString("NombreHotel");
-            System.out.println("reserva vista, nombreHotel: "+ nombreHotel);//------------------------------
         camasIndi = bundle.getString("CamasIndi");
-            System.out.println("reserva vista, camasIndi: "+ camasIndi);//------------------------------
         camasMat = bundle.getString("CamasMat");
-            System.out.println("reserva vista, camasMat: "+ camasMat);//------------------------------
         precio = bundle.getString("Precio");
-            System.out.println("reserva vista, precio: "+ precio);//------------------------------
         nombreUsurio = bundle.getString("Usuario");
-            System.out.println("reserva vista, nombreUsurio: "+ nombreUsurio);//------------------------------
         eMail = bundle.getString("Mail");
-            System.out.println("reserva vista, eMail: "+ eMail);//------------------------------
         telefono = bundle.getString("Telefono");
-            System.out.println("reserva vista, telefono: "+ telefono);//----------------------------
 
         darValores();
 
@@ -114,7 +100,6 @@ public class ReservaVista extends AppCompatActivity implements ReservaContrato.V
             this.finish();
         }, 2500);
 
-        //Toast.makeText(this, "Reservado con exito", Toast.LENGTH_LONG);
 
     }
 

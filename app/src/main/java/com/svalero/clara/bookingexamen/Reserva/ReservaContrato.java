@@ -1,7 +1,6 @@
 package com.svalero.clara.bookingexamen.Reserva;
 
 import android.content.Context;
-import com.svalero.clara.bookingexamen.Beans.Usuario;
 
 
 public interface ReservaContrato {

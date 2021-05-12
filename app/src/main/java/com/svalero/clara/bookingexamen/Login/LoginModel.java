@@ -4,9 +4,7 @@ import android.content.Context;
 
 import com.svalero.clara.bookingexamen.Beans.Usuario;
 import com.svalero.clara.bookingexamen.Retrofit.ApiCliente;
-
 import java.util.ArrayList;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;

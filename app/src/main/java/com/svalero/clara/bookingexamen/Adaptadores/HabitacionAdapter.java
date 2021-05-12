@@ -3,15 +3,9 @@ package com.svalero.clara.bookingexamen.Adaptadores;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
-
-import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.svalero.clara.bookingexamen.Beans.Habitacion;
-
-
 import com.svalero.clara.bookingexamen.R;
 
 import java.util.ArrayList;
@@ -27,9 +21,7 @@ public class HabitacionAdapter extends RecyclerView.Adapter<HabitacionAdapter.Ha
         private TextView txtHabRowCamasIndi1;
         private TextView txtHabRowCamasMatri1;
         private TextView txtHabRowPrecio;
-        private TextView txtIdHabitacion;//--------------------------
-
-
+        private TextView txtIdHabitacion;
 
 
         public HabitacionViewHolder(View v){
@@ -38,7 +30,7 @@ public class HabitacionAdapter extends RecyclerView.Adapter<HabitacionAdapter.Ha
             txtHabRowCamasMatri1 = (TextView) v.findViewById(R.id.txtHabRowCamasMatri1);
             txtHabRowNumPersonas1 = (TextView) v.findViewById(R.id.txtHabRowNumPersonas1);
             txtHabRowPrecio = (TextView) v.findViewById(R.id.txtHabRowPrecio);
-            txtIdHabitacion =(TextView) v.findViewById(R.id.txtIdHabitacion);//---------------------------
+            txtIdHabitacion =(TextView) v.findViewById(R.id.txtIdHabitacion);
 
         }
 
@@ -72,15 +64,10 @@ public class HabitacionAdapter extends RecyclerView.Adapter<HabitacionAdapter.Ha
     @Override
     public void onBindViewHolder(HabitacionViewHolder holder, int position) {
         holder.txtHabRowCamasIndi1.setText(String.valueOf(listaHabitaciones.get(position).getCamasInd()));
-        System.out.println("a ver que le llega dentro del viewholder de habitacionAdapter, camas ind: "+ listaHabitaciones.get(position).getCamasInd());//-------------------------
         holder.txtHabRowCamasMatri1.setText(String.valueOf(listaHabitaciones.get(position).getCamasMat()));
-        System.out.println("a ver que le llega dentro del viewholder de habitacionAdapter, camas mat: "+ listaHabitaciones.get(position).getCamasMat());//--------
         holder.txtHabRowNumPersonas1.setText(String.valueOf(listaHabitaciones.get(position).getNumPersonas()));
-        System.out.println("a ver que le llega dentro del viewholder de habitacionAdapter, num per: "+ listaHabitaciones.get(position).getNumPersonas());//--------
         holder.txtHabRowPrecio.setText(String.valueOf(listaHabitaciones.get(position).getPrecio()));
-        System.out.println("a ver que le llega dentro del viewholder de habitacionAdapter, precio: "+ listaHabitaciones.get(position).getPrecio());//--------
         holder.txtIdHabitacion.setText(String.valueOf(listaHabitaciones.get(position).getIdHabitacion()));
-        System.out.println("a ver que le llega dentro del viewholder de habitacionAdapter, id habitacion: "+ listaHabitaciones.get(position).getIdHabitacion());//--------
 
     }
 

@@ -20,7 +20,7 @@ import java.util.ArrayList;
 public class ListarTodoVista extends AppCompatActivity implements ListarTodoContrato.View{
 
     private EditText edtTodoDestino;
-    private ImageButton imgTodoBuscar;
+    //private ImageButton imgTodoBuscar;
     String destino;
     private ListarTodoPresenter listarTodoPresenter;
     private RecyclerView recyclerView;

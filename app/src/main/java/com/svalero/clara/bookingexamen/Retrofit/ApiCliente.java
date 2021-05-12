@@ -70,9 +70,9 @@ public class ApiCliente {
         BookingApiInterfaz bookingApiInterfaz = retrofit.create(BookingApiInterfaz.class);
         return bookingApiInterfaz.addReserva(param);
     }
-
+/*
     public Call<ResponseBody> addSobre(String param){
         BookingApiInterfaz bookingApiInterfaz = retrofit.create(BookingApiInterfaz.class);
         return bookingApiInterfaz.addSobre(param);
-    }
+    }*/
 }

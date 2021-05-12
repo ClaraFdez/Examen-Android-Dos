@@ -2,16 +2,12 @@ package com.svalero.clara.bookingexamen.Login;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
-
-import com.svalero.clara.bookingexamen.Beans.Reserva;
 import com.svalero.clara.bookingexamen.Beans.Usuario;
-import com.svalero.clara.bookingexamen.ListarTodo.ListarTodoVista;
 import com.svalero.clara.bookingexamen.R;
 import com.svalero.clara.bookingexamen.Registro.RegistroVista;
 import com.svalero.clara.bookingexamen.Reserva.ReservaVista;
@@ -70,21 +66,14 @@ public class MainActivity extends AppCompatActivity implements LoginContrato.Vie
     }
 
     public void errorUsuario(){
-        System.out.println("dentro del login errorUsuario");//---------------------------------
         Toast.makeText(this, "Usuario o contraseña incorrectos", Toast.LENGTH_SHORT).show();
     }
 
-    public void errorRegistro(){
-        Toast.makeText(this, "El usuario ya existe", Toast.LENGTH_SHORT).show();
-    }
 
     public void loginEntrar(View view){
         obtenerValores();
         loginPresenter = new LoginPresenter(this);
         loginPresenter.getLogin(this, nombre, pass);
-        //Intent i = new Intent(getApplicationContext(), Reserva.class);
-        //hay que pasarle los datos del usuario y los que le han llegado desde la fragment de HabitacionFragment
-        //startActivity(i);
     }
 
     public void loginRegistrar (View view){
@@ -98,11 +87,9 @@ public class MainActivity extends AppCompatActivity implements LoginContrato.Vie
         i.putExtra("Precio", precio);
 
         startActivity(i);
-        /*Intent i = new Intent(getApplicationContext(),ListarTodoVista.class);
-        startActivity(i);*/
     }
 
-    public boolean comprobar(ArrayList<Usuario> listaUsuario2){ //-------------- quizas en registroview
+    public boolean comprobar(ArrayList<Usuario> listaUsuario2){
         obtenerValores();
         boolean resp = true;
         for ( int i = 0; i<listaUsuario2.size(); i++){
@@ -115,11 +102,9 @@ public class MainActivity extends AppCompatActivity implements LoginContrato.Vie
 
     @Override
     public void success(ArrayList<Usuario> listaUsuario) {
-        System.out.println("1 dentro del login success");//---------------------------------
+
         if( listaUsuario.isEmpty()) {
-            System.out.println("2 dentro del login success");//---------------------------------
-            //if((listaUsuario.get(0).getEmail()).equalsIgnoreCase("null")){
-                System.out.println("3 dentro del login success");//---------------------------------
+
                errorUsuario();
                edtLoginPass.setText("");
                edtLoginUsuario.setText("");
@@ -138,7 +123,7 @@ public class MainActivity extends AppCompatActivity implements LoginContrato.Vie
                 i.putExtra("IdUsuario", Integer.toString(listaUsuario.get(0).getId()));
                 startActivity(i);
             }
-       // }
+
     }
 
     @Override

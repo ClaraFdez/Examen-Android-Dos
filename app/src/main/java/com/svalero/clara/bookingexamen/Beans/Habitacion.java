@@ -1,11 +1,6 @@
 package com.svalero.clara.bookingexamen.Beans;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
-import java.util.ArrayList;
-import java.util.Date;
 
 public class Habitacion {
 
@@ -36,7 +31,6 @@ public class Habitacion {
     }
 
     public Habitacion(int id_habitacion, int numero_personas, int camas_individuales, int camas_matrimonio, int precio){
-        //this.nombreHotel = nombreHotel;//-----------------------
         this.id_habitacion = id_habitacion;
         this.numero_personas = numero_personas;
         this.camas_individuales = camas_individuales;
@@ -64,31 +58,6 @@ public class Habitacion {
     public String getNombreHotel() {return nombreHot; }
     public void setNombreHotel(String nombreHotel) {this.nombreHot = nombreHotel;}
 
-    /*
-    public static ArrayList<Habitacion> getArrayListFromJSon(JSONArray datos){
-        ArrayList<Habitacion> lista = null;
-        Habitacion habitacion = null;
-        try{
-            if(datos != null && datos.length()>0){
-                lista = new ArrayList<Habitacion>();
-            }
-            for ( int i = 0; i < datos.length(); i++){
-                JSONObject json_data = datos.getJSONObject(i);
-                habitacion = new Habitacion();
 
-                habitacion.setIdHabitacion(json_data.getInt("id_habitacion"));
-                habitacion.setNumPersonas(json_data.getInt("numero_personas"));
-                habitacion.setCamasInd(json_data.getInt("camas_individuales"));
-                habitacion.setCamasMat(json_data.getInt("camas_matrimonio"));
-                habitacion.setPrecio(json_data.getInt("precio"));
-
-                lista.add(habitacion);
-            }
-        }catch (JSONException e){
-            e.printStackTrace();
-        }
-
-        return lista;
-    }*/
 
 }
