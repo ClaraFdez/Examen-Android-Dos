@@ -31,6 +31,9 @@ public class ReservaVista extends AppCompatActivity implements ReservaContrato.V
     public String eMail;
     public String telefono;
 
+    private View layoutError;
+    private View layoutVista;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -76,6 +79,8 @@ public class ReservaVista extends AppCompatActivity implements ReservaContrato.V
         txtReservaFechaEntrada = findViewById(R.id.txtReservaFechaEntrada);
         txtReservaFechaSalida = findViewById(R.id.txtReservaFechaSalida);
         txtReservaPrecio = findViewById(R.id.txtReservaPrecio);
+        layoutError = findViewById(R.id.layoutErrorRservar);
+        layoutVista = findViewById(R.id.RL_Usuario);
     }
 
     public void darValores(){
@@ -91,6 +96,8 @@ public class ReservaVista extends AppCompatActivity implements ReservaContrato.V
     }
 
     public void registrarReserva(View view){
+       layoutVista.setVisibility(View.VISIBLE);
+       layoutError.setVisibility(View.GONE);
        ReservaPresenter reservaPresenter = new ReservaPresenter(this);
        reservaPresenter.setReserva(this, idUsuario, fechaInicio, fechaFin, idHabitacion);
     }
@@ -98,24 +105,39 @@ public class ReservaVista extends AppCompatActivity implements ReservaContrato.V
     @Override
     public void successReserva(String success) {
 
+        Toast.makeText(this, "Reservado con exito", Toast.LENGTH_LONG).show();
+
         final Handler handler = new Handler();
         handler.postDelayed(()-> {
-            Toast.makeText(this, "Reservado con exito", Toast.LENGTH_LONG);
+            Intent intent = new Intent(this, InicioActivity.class);
+            startActivity(intent);
             this.finish();
         }, 2500);
 
         //Toast.makeText(this, "Reservado con exito", Toast.LENGTH_LONG);
-        Intent intent = new Intent(this, InicioActivity.class);
-        startActivity(intent);
+
     }
 
     @Override
     public void errorReserva(String mensaje) {
 
+        Toast.makeText(this, "Error en la reserva", Toast.LENGTH_LONG).show();
 
-
-        Toast.makeText(this, "Error en la reserva", Toast.LENGTH_LONG);
+        final Handler handler = new Handler();
+        handler.postDelayed(()-> {
         Intent intent = new Intent(this, FichaVista.class);
         startActivity(intent);
+            this.finish();
+        }, 2500);
     }
+
+
+    public void botonReintentarReservar(View view){
+        layoutError.setVisibility(View.VISIBLE);
+        layoutVista.setVisibility(View.GONE);
+        ReservaPresenter reservaPresenter = new ReservaPresenter(this);
+        reservaPresenter.setReserva(this, idUsuario, fechaInicio, fechaFin, idHabitacion);
+    }
+
+
 }
