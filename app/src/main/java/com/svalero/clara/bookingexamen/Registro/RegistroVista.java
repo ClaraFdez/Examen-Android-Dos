@@ -1,9 +1,17 @@
 package com.svalero.clara.bookingexamen.Registro;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityOptionsCompat;
+
+import android.transition.Fade;
+
 import android.content.Intent;
 import android.os.Bundle;
+import android.transition.Slide;
+import android.transition.Transition;
+import android.view.Gravity;
 import android.view.View;
+import android.view.animation.DecelerateInterpolator;
 import android.widget.EditText;
 import android.widget.Toast;
 import com.svalero.clara.bookingexamen.Beans.Usuario;
@@ -38,6 +46,7 @@ public class RegistroVista extends AppCompatActivity implements RegistroContrato
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_registro_vista);
 
         inicializar();
@@ -96,6 +105,14 @@ public class RegistroVista extends AppCompatActivity implements RegistroContrato
         pre = Integer.parseInt(precio);
 
         registrado(success);
+
+        //nuevo1
+        Transition transition1 = new Slide(Gravity.START);
+        transition1.setDuration(100);
+        transition1.setInterpolator(new DecelerateInterpolator());
+        //fin nuevo1
+        getWindow().setExitTransition(transition1);
+
         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         intent.putExtra("IdHabitacion", idH);
         intent.putExtra("FechaInicio", fechaInicio);
@@ -104,7 +121,8 @@ public class RegistroVista extends AppCompatActivity implements RegistroContrato
         intent.putExtra("CamasIndi", cind);
         intent.putExtra("CamasMat", cmat);
         intent.putExtra("Precio", pre);
-        startActivity(intent);
+        //startActivity(intent);
+        startActivity(intent, ActivityOptionsCompat.makeSceneTransitionAnimation(this).toBundle());
     }
 
     @Override

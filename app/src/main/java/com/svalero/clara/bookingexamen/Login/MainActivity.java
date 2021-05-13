@@ -1,10 +1,17 @@
 package com.svalero.clara.bookingexamen.Login;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityOptionsCompat;
 import androidx.fragment.app.FragmentManager;
+
+
 import android.content.Intent;
 import android.os.Bundle;
+import android.transition.Slide;
+import android.transition.Transition;
+import android.view.Gravity;
 import android.view.View;
+import android.view.animation.DecelerateInterpolator;
 import android.widget.EditText;
 import android.widget.Toast;
 import com.svalero.clara.bookingexamen.Beans.Usuario;
@@ -34,13 +41,17 @@ public class MainActivity extends AppCompatActivity implements LoginContrato.Vie
 
     private FragmentManager fragmentManager;
 
+    //nuevo1
+    private Transition transition; //hay 3 librerias distintas para esto
+    //fin nuevo1
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         fragmentManager = getSupportFragmentManager();
-        inicializar();
+        //inicializar();
 
         inicializar();
 
@@ -77,6 +88,14 @@ public class MainActivity extends AppCompatActivity implements LoginContrato.Vie
     }
 
     public void loginRegistrar (View view){
+        //nuevo1
+        transition = new Slide(Gravity.START);
+        transition.setDuration(1000);
+        transition.setInterpolator(new DecelerateInterpolator());
+
+        getWindow().setExitTransition(transition);
+        //fin nuevo1
+
         Intent i = new Intent(getApplicationContext(), RegistroVista.class);
         i.putExtra("IdHabitacion", idHabitacion);
         i.putExtra("FechaInicio", fechaInicio);
@@ -86,7 +105,8 @@ public class MainActivity extends AppCompatActivity implements LoginContrato.Vie
         i.putExtra("CamasMat", camasMat);
         i.putExtra("Precio", precio);
 
-        startActivity(i);
+        //startActivity(i);
+        startActivity(i, ActivityOptionsCompat.makeSceneTransitionAnimation(this).toBundle());
     }
 
     public boolean comprobar(ArrayList<Usuario> listaUsuario2){
