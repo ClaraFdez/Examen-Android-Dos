@@ -82,7 +82,8 @@ public class ListarTodoVista extends AppCompatActivity implements ListarTodoCont
         layoutListarTodo.setVisibility(View.VISIBLE);
 
         ListarTodoAdapter adapter;
-        adapter = new ListarTodoAdapter(listaHoteles);
+        //adapter = new ListarTodoAdapter(listaHoteles);
+        adapter = new ListarTodoAdapter(listaHoteles, this);
         recyclerView.setAdapter(adapter);
 
         adapter.setOnClickListener(new View.OnClickListener() {

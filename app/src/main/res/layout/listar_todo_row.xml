@@ -2,6 +2,7 @@
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cv_listar_todo"
     android:layout_width="match_parent"
     android:layout_height="100dp"
     card_view:cardCornerRadius="10dp"

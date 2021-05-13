@@ -1,10 +1,13 @@
 package com.svalero.clara.bookingexamen.Adaptadores;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 import com.squareup.picasso.Picasso;
 import com.svalero.clara.bookingexamen.Beans.Hotel;
@@ -17,6 +20,9 @@ public class ListarTodoAdapter extends RecyclerView.Adapter<ListarTodoAdapter.Ho
 
     private ArrayList<Hotel> listaHoteles;
     private View.OnClickListener listener;
+    //nuevo
+    private Context context;
+    //fin nuevo
 
     public static class HotelViewHolder extends RecyclerView.ViewHolder{
 
@@ -24,6 +30,9 @@ public class ListarTodoAdapter extends RecyclerView.Adapter<ListarTodoAdapter.Ho
         public TextView edtTodoNombre;
         public TextView edtTodoCiudad;
         public TextView edtPuntuacion;
+        //nuevo
+        public CardView cardViewListarTodo;
+        //fin nuevo
 
 
         public HotelViewHolder(View v){
@@ -32,14 +41,25 @@ public class ListarTodoAdapter extends RecyclerView.Adapter<ListarTodoAdapter.Ho
             edtTodoCiudad = (TextView) v.findViewById(R.id.edtTodoCiudad);
             edtTodoNombre = (TextView) v.findViewById(R.id.edtTodoNombre);
             edtPuntuacion = (TextView) v.findViewById(R.id.edtTodoPuntuacion);
+            //nuevo
+            cardViewListarTodo = (CardView) v.findViewById(R.id.cv_listar_todo);
+            //fin nuevo
 
         }
 
     }
-
+/*
     public ListarTodoAdapter (ArrayList<Hotel> listaHoteles){
         this.listaHoteles = listaHoteles;
     }
+*/
+
+    //nuevo
+    public ListarTodoAdapter (ArrayList<Hotel> listaHoteles, Context context){
+        this.listaHoteles = listaHoteles;
+        this.context = context;
+    }
+    //fin nuevo
 
 
     @Override
@@ -67,6 +87,10 @@ public class ListarTodoAdapter extends RecyclerView.Adapter<ListarTodoAdapter.Ho
 
     @Override
     public void onBindViewHolder(HotelViewHolder holder, int position) {
+        //nuevo
+        holder.cardViewListarTodo.setAnimation(AnimationUtils.loadAnimation(context, R.anim.transicion_cv));
+        //fin nuevo
+
         String url = "http://192.168.1.124:8080/Booking_2/images/" + listaHoteles.get(position).getFoto() + ".jpg";
 
         Picasso.get().load(url).into(holder.imagen);

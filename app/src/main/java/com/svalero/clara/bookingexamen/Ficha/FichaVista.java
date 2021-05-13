@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.AlphaAnimation;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.squareup.picasso.Picasso;
@@ -128,6 +129,13 @@ public class FichaVista extends AppCompatActivity implements FichaContrato.View{
         txtPuntuacion.setText(String.valueOf(listaHoteles.get(0).getPuntuacion()));
         String url = "http://192.168.1.124:8080/Booking_2/images/" + listaHoteles.get(0).getFoto() + ".jpg";
         Picasso.get().load(url).into(imagen);
+
+        AlphaAnimation alphaAnimation = new AlphaAnimation(0.0f, 1.0f);
+        alphaAnimation.setDuration(1000);
+        alphaAnimation.setStartOffset(1000);
+        alphaAnimation.setFillAfter(true);
+        imagen.startAnimation(alphaAnimation);
+
     }
 
 
